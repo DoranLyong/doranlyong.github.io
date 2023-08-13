@@ -2,6 +2,9 @@
 
 ![banner_img](./static/images/banner_img.png)
 
+[https://doranlyong.github.io/projects/spanet/](https://doranlyong.github.io/projects/spanet/)
+
+
 ## Acknowledgments
 
 Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
