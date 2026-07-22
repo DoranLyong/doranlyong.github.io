@@ -208,7 +208,7 @@ const PUBS = [
     venue:
       "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 8069–8076",
     badgeShort: "IROS",
-    thumb: null,
+    thumb: "assets/img/pub-iros2023.svg", // 임시 플레이스홀더 — 실제 figure 준비되면 교체
     abstract:
       "Isolation wards operate in quarantine rooms to prevent cross-contamination caused by infectious diseases. Behind the benefits, medical personnel can have the infection risk from patients and the heavy workload due to the isolation. This work proposes a robot-assisted system to alleviate these problems in isolation wards. We conducted a survey about the medical staff's difficulties and envisioning robots. Using the investigation result, we devised three valuable services using two kinds of heterogeneous robots: telemedicine, emergency alert, and delivery services by care robots and delivery robots. Our system also provides user-interactive components such as a dashboard for medical staff and a patient app for inpatients. To manage the services efficiently, we suggest the robotic system based on a central control server and a hierarchical management architecture. Through a user study, we reviewed the usability of the developed system and its future directions.",
     links: [
@@ -230,7 +230,7 @@ const PUBS = [
     venue:
       "International Conference on Pattern Recognition (ICPR), pp. 2207–2212",
     badgeShort: "ICPR",
-    thumb: null,
+    thumb: "assets/img/pub-icpr2022.svg", // 임시 플레이스홀더 — 실제 figure 준비되면 교체
     abstract:
       "Fall detection is one of the most important functions for a healthcare robot system because falls are very dangerous for older people and might lead to death if failed to provide prompt and adequate treatment. In this paper, we propose an efficient fall detection method based on 3-axis accelerometer and depth sensor fusion. LSTM networks are applied to handle temporal information. Simple low-level motion and pose features are obtained from each sensor data, and then fed into the LSTM networks that can learn high-level feature representations to classify falls from other daily life activities. Also, various learning tricks are combined to improve the performance. Experimental results show that the proposed fall detection method outperforms existing methods.",
     links: [{ label: "Paper", url: "https://doi.org/10.1109/ICPR56361.2022.9956418" }],

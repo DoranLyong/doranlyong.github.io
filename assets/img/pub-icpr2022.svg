@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 224" width="380" height="224" role="img" aria-label="Placeholder figure for the fall-detection paper">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef4fb"/>
+      <stop offset="1" stop-color="#dbe6f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="380" height="224" fill="url(#bg2)"/>
+  <rect x="14" y="14" width="352" height="196" rx="10" fill="none" stroke="#9fb6d1" stroke-width="2" stroke-dasharray="7 7"/>
+
+  <!-- accelerometer / sensor-fusion waveform motif -->
+  <g transform="translate(190 84)">
+    <path d="M-70 0 h20 l10 -26 l14 46 l12 -34 l10 20 h24"
+          fill="none" stroke="#043361" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- spike marking the detected fall -->
+    <circle cx="-16" cy="20" r="6" fill="#fba524"/>
+  </g>
+
+  <text x="190" y="168" text-anchor="middle" font-family="Lato, 'Segoe UI', system-ui, sans-serif" font-size="18" font-weight="700" fill="#043361">Figure coming soon</text>
+  <text x="190" y="190" text-anchor="middle" font-family="Lato, 'Segoe UI', system-ui, sans-serif" font-size="12.5" fill="#5a7595">Accelerometer + depth fusion for fall detection</text>
+</svg>
