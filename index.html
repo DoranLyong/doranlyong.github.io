@@ -1,10 +1,110 @@
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guhnoo Yun</title>
+  <meta name="description" content="Guhnoo Yun — Ph.D. candidate in Computer Science and Engineering at Korea University and student researcher at KIST. Research on spectral analysis of vision architectures, token mixers, and backbone design (SPANet, SPANetV2).">
+  <link rel="canonical" href="https://doranlyong.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Guhnoo Yun">
+  <meta property="og:description" content="Ph.D. candidate at Korea University · KIST. Spectral analysis of vision architectures and token mixer design.">
+  <meta property="og:url" content="https://doranlyong.github.io/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- pre-paint theme: 다크모드 깜빡임 방지 -->
+  <script>
+    (function () {
+      try {
+        var m = location.search.match(/[?&]theme=(dark|light)/);
+        var t = m ? m[1] : localStorage.getItem("theme");
+        if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Guhnoo Yun",
+    "jobTitle": "Ph.D. Candidate",
+    "affiliation": [
+      { "@type": "Organization", "name": "Korea University" },
+      { "@type": "Organization", "name": "Korea Institute of Science and Technology" }
+    ],
+    "alumniOf": [
+      { "@type": "Organization", "name": "Gwangju Institute of Science and Technology" },
+      { "@type": "Organization", "name": "Gyeongsang National University" }
+    ],
+    "url": "https://doranlyong.github.io/",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=L47h01YAAAAJ",
+      "https://github.com/DoranLyong",
+      "https://www.linkedin.com/in/guhnoo-yun-71b40b178"
+    ]
+  }
+  </script>
 </head>
-<body>
-  <p>Hello, World!</p>
+<body data-page="index">
+  <div class="wrapper">
+    <aside class="sidebar"><!-- rendered by main.js --></aside>
+
+    <main class="content">
+      <section class="block" id="about">
+        <h2>About Me</h2>
+        <div id="about-body"></div>
+        <div class="hero-actions"></div>
+      </section>
+
+      <section class="block" id="interests">
+        <h2>Research Interests</h2>
+        <div id="interests-body"></div>
+      </section>
+
+      <section class="block" id="news">
+        <h2>News</h2>
+        <div id="news-body"></div>
+      </section>
+
+      <section class="block" id="publications">
+        <h2>Publications</h2>
+        <div id="pubs-body"></div>
+        <p style="font-size:13px">See also <a href="https://scholar.google.com/citations?user=L47h01YAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
+      </section>
+
+      <section class="block" id="experience">
+        <h2>Experience</h2>
+        <div id="experience-body"></div>
+      </section>
+
+      <section class="block" id="education">
+        <h2>Education</h2>
+        <div id="education-body"></div>
+      </section>
+
+      <section class="block" id="awards">
+        <h2>Honors &amp; Awards</h2>
+        <div id="awards-body"></div>
+      </section>
+
+      <section class="block" id="services">
+        <h2>Services &amp; Skills</h2>
+        <div id="services-body"></div>
+      </section>
+
+      <footer class="site-footer"><!-- rendered by main.js --></footer>
+    </main>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
