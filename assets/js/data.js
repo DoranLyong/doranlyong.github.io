@@ -37,12 +37,16 @@ const SITE = {
 
 /* 3인칭 소개문 — "Copy bio" 버튼이 이 문자열을 복사합니다. */
 const BIO =
-  "Guhnoo Yun is a Ph.D. candidate in Computer Science and Engineering at Korea University " +
-  "and a student researcher at the Korea Institute of Science and Technology (KIST). " +
-  "His research focuses on spectral analysis of vision architectures and the design " +
-  "of efficient token mixers and backbone networks for visual perception. He is the first " +
-  "author of SPANet (ICCV 2023) and SPANetV2 (IEEE TPAMI). Before joining Korea University, " +
-  "he received his M.S. in Mechatronics from GIST and his B.S. from Gyeongsang National University.";
+  "Guhnoo Yun received his B.S. degree in Control and Measurement Engineering from " +
+  "Gyeongsang National University (GNU), Jinju, Korea, in 2016, and his M.S. degree in " +
+  "Mechatronics from Gwangju Institute of Science and Technology (GIST), Gwangju, Korea, " +
+  "in 2018. He is currently pursuing a Ph.D. degree in Computer Science and Engineering " +
+  "at Korea University, Seoul, Korea. From 2018 to 2019, he was an intern researcher at " +
+  "the Center for Intelligent Robotics, Korea Institute of Science and Technology (KIST), " +
+  "and he has been a student researcher at the Intelligence and Interaction Research " +
+  "Center, KIST, since 2019. His current research interests are in computer vision, " +
+  "pattern recognition, machine learning, deep learning architecture, and their " +
+  "applications including object detection, instance segmentation, and 3D vision.";
 
 /* 홈 About 문단 (HTML 허용) */
 const ABOUT_HTML = `
@@ -51,12 +55,14 @@ const ABOUT_HTML = `
 and a student researcher at the
 <a href="https://www.kist.re.kr" target="_blank" rel="noopener">Korea Institute of Science and Technology (KIST)</a>,
 where I work with Dr. Dong Hwan Kim.</p>
-<p>My research asks a simple question: <strong>what do vision networks actually see in the
-spectral domain?</strong> Convolutions and self-attention behave like high- and low-pass
-filters — I design token mixers and backbone architectures that balance the two, so that
-models capture both fine textures and global structure. This line of work led to
-<a href="#spanet2023">SPANet (ICCV 2023)</a> and its journal extension
-<a href="#spanetv22026">SPANetV2 (IEEE TPAMI)</a>.</p>
+<p>My research asks a simple question: <strong>what do deep neural networks actually see in the
+spectral domain?</strong> I use spectral analysis — frequency responses, graph spectra, filter
+behavior — as a general lens for understanding and improving deep networks, whatever the domain.
+In vision, this lens produced <a href="#spanet2023">SPANet (ICCV 2023)</a> and its journal
+extension <a href="#spanetv22026">SPANetV2 (IEEE TPAMI)</a>: convolutions and self-attention
+behave like high- and low-pass filters, and balancing them yields better token mixers and
+backbones. The same approach carries wherever deep networks are at work — medical imaging,
+robotics, reinforcement learning — and I am actively extending it beyond vision.</p>
 <p>Earlier, I worked on shape-from-focus for 3D reconstruction and on perception for
 healthcare and assistive robotics — fall detection, gesture-based drone control, and
 robot-assisted services in hospital isolation wards.</p>
