@@ -614,6 +614,10 @@ footer.site-footer {
 footer.site-footer a { color: var(--text-light); }
 footer.site-footer a:hover { color: var(--link-hover); }
 
+/* ---------- mobile sticky top nav (rendered by main.js, hidden on desktop) ---------- */
+
+.mobile-topnav { display: none; }
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 960px) {
@@ -636,6 +640,36 @@ footer.site-footer a:hover { color: var(--link-hover); }
     padding: 14px 12px 0;
   }
   .side-nav li { margin: 0; }
+
+  /* sticky top nav — follows the viewport while scrolling */
+  .mobile-topnav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    justify-content: center;
+    justify-content: safe center; /* avoid left-edge clipping when links overflow */
+    gap: 14px;
+    padding: 11px 12px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    font-size: 13.5px;
+  }
+  .mobile-topnav::-webkit-scrollbar { display: none; }
+  .mobile-topnav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .mobile-topnav a:hover { color: var(--link-hover); }
+
+  /* keep anchored sections (and pub deep links) clear of the sticky bar */
+  .block,
+  .pub-list li { scroll-margin-top: 58px; }
 }
 
 @media (max-width: 560px) {
