@@ -1,4 +1,4 @@
-# Guhnoo Yun — Academic Homepage
+# Academic Homepage
 
 빌드 도구 없는 순수 정적 사이트입니다 (GitHub Pages 에 바로 배포 가능).
 
