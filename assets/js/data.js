@@ -32,14 +32,14 @@ const SITE = {
   rsLink: null, // Research statement PDF (있으면 버튼 자동 표시)
   portrait: "assets/img/profile.webp",
   canonical: "https://doranlyong.github.io/",
-  updated: "2026-07-21",
+  updated: "2026-07-22",
 };
 
 /* 3인칭 소개문 — "Copy bio" 버튼이 이 문자열을 복사합니다. */
 const BIO =
   "Guhnoo Yun is a Ph.D. candidate in Computer Science and Engineering at Korea University " +
   "and a student researcher at the Korea Institute of Science and Technology (KIST). " +
-  "His research focuses on frequency-domain analysis of vision architectures and the design " +
+  "His research focuses on spectral analysis of vision architectures and the design " +
   "of efficient token mixers and backbone networks for visual perception. He is the first " +
   "author of SPANet (ICCV 2023) and SPANetV2 (IEEE TPAMI). Before joining Korea University, " +
   "he received his M.S. in Mechatronics from GIST and his B.S. from Gyeongsang National University.";
@@ -52,7 +52,7 @@ and a student researcher at the
 <a href="https://www.kist.re.kr" target="_blank" rel="noopener">Korea Institute of Science and Technology (KIST)</a>,
 where I work with Dr. Dong Hwan Kim.</p>
 <p>My research asks a simple question: <strong>what do vision networks actually see in the
-frequency domain?</strong> Convolutions and self-attention behave like high- and low-pass
+spectral domain?</strong> Convolutions and self-attention behave like high- and low-pass
 filters — I design token mixers and backbone architectures that balance the two, so that
 models capture both fine textures and global structure. This line of work led to
 <a href="#spanet2023">SPANet (ICCV 2023)</a> and its journal extension
@@ -334,7 +334,7 @@ const EXPERIENCE = [
     title: "Student Researcher",
     sub: 'Korea Institute of Science and Technology (KIST), Seoul — with Dr. Dong Hwan Kim',
     bullets: [
-      "Frequency-domain analysis of vision backbones; token mixer design (SPANet, SPANetV2)",
+      "Spectral analysis of vision backbones; token mixer design (SPANet, SPANetV2)",
       "Vision-based human-robot interaction: gesture control, fall detection",
     ],
   },
