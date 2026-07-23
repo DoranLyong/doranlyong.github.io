@@ -91,10 +91,6 @@ const INTERESTS = [
    ⚠ 날짜는 근사치입니다. 정확한 날짜로 수정해 주세요. */
 const NEWS = [
   {
-    date: "2026-05-11",
-    html: 'New preprint on initiation-of-interaction detection for human-robot interaction is on arXiv. <a href="#ioi2026">[paper]</a>',
-  },
-  {
     date: "2026-05-01",
     html: 'SPANetV2 (<em>Spectral-Adaptive Modulation Networks for Visual Perception</em>) has been accepted to <strong>IEEE TPAMI</strong>! <a href="#spanetv22026">[paper]</a> <a href="https://github.com/DoranLyong/SPANetV2-official" target="_blank" rel="noopener">[code]</a>',
   },
