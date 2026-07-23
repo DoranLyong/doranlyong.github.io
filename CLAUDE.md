@@ -24,7 +24,7 @@ git add -A && git commit -m "..." && git push
 
 `index.html` 은 **빈 섹션 컨테이너만** 담은 껍데기입니다. 실제 콘텐츠는 없고, 두 스크립트가 런타임에 채웁니다:
 
-- **`assets/js/data.js`** — 사이트의 **모든 콘텐츠**를 담은 전역 상수: `SITE`, `BIO`, `ABOUT_HTML`, `INTERESTS`, `NEWS`, `THEMES`, `PUBS`, `EXPERIENCE`, `EDUCATION`, `AWARDS`, `SERVICES`.
+- **`assets/js/data.js`** — 사이트의 **모든 콘텐츠**를 담은 전역 상수: `SITE`, `BIO`, `ABOUT_HTML`, `INTERESTS_INTRO_HTML`, `INTERESTS`, `INTERESTS_OUTRO_HTML`, `NEWS`, `THEMES`, `PUBS`, `EXPERIENCE`, `EDUCATION`, `AWARDS`, `SERVICES`. (About 은 신상·소속만, 연구 서사는 Interests 의 intro/outro 문단에 둔다.)
 - **`assets/js/main.js`** — 위 전역들을 읽어 DOM 을 렌더하는 vanilla JS (IIFE, 프레임워크 없음). `DOMContentLoaded` 에서 `renderSidebar → renderIndex → renderPubs → renderFooter → initEmail → initTheme` 순서로 실행.
 
 > **가장 중요한 규칙: 콘텐츠 수정은 `data.js` 에서만 한다.** 이름·논문·뉴스·경력 등을 바꿀 때 HTML/CSS/main.js 는 건드리지 않습니다. main.js/CSS 는 *렌더링 방식/디자인*을 바꿀 때만 수정합니다.

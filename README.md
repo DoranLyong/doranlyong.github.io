@@ -15,7 +15,7 @@
 | 이름·소속·링크·CV | `SITE` |
 | 자기소개 (3인칭, Copy bio 용) | `BIO` |
 | About 문단 | `ABOUT_HTML` |
-| 연구 관심사 | `INTERESTS` |
+| 연구 관심사 | `INTERESTS_INTRO_HTML` / `INTERESTS` / `INTERESTS_OUTRO_HTML` |
 | 뉴스 | `NEWS` (최신순, ISO 날짜) |
 | 논문 필터 칩 (All 탭) | `THEMES` |
 | 논문 | `PUBS` |

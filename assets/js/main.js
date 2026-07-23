@@ -274,11 +274,17 @@
 
     const interests = document.getElementById("interests-body");
     if (interests) {
+      if (typeof INTERESTS_INTRO_HTML !== "undefined" && INTERESTS_INTRO_HTML) {
+        interests.innerHTML = INTERESTS_INTRO_HTML;
+      }
       const ul = el("ul");
       INTERESTS.forEach(function (i) {
         ul.appendChild(el("li", null, i));
       });
       interests.appendChild(ul);
+      if (typeof INTERESTS_OUTRO_HTML !== "undefined" && INTERESTS_OUTRO_HTML) {
+        interests.insertAdjacentHTML("beforeend", INTERESTS_OUTRO_HTML);
+      }
     }
 
     /* hero action buttons (conditional) + copy-bio */

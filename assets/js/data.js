@@ -48,13 +48,20 @@ const BIO =
   "pattern recognition, machine learning, deep learning architecture, and their " +
   "applications including object detection, instance segmentation, and 3D vision.";
 
-/* 홈 About 문단 (HTML 허용) */
+/* 홈 About 문단 (HTML 허용) — 신상·소속만. 연구 내용은 Research Interests 로. */
 const ABOUT_HTML = `
 <p>I am a Ph.D. candidate in Computer Science and Engineering at
 <a href="https://www.korea.ac.kr" target="_blank" rel="noopener">Korea University</a>,
 and a student researcher at the
 <a href="https://www.kist.re.kr" target="_blank" rel="noopener">Korea Institute of Science and Technology (KIST)</a>,
 where I work with Dr. Dong Hwan Kim.</p>
+<p>Before joining Korea University, I received my M.S. in Mechatronics from the
+Gwangju Institute of Science and Technology (GIST) and my B.S. in Control and
+Measurement Engineering from Gyeongsang National University.</p>
+`;
+
+/* Research Interests 서두 문단 — 불릿 목록 위에 렌더링 (HTML 허용, 없으면 생략) */
+const INTERESTS_INTRO_HTML = `
 <p>My research asks a simple question: <strong>what do deep neural networks actually see in the
 spectral domain?</strong> I use spectral analysis — frequency responses, graph spectra, filter
 behavior — as a general lens for understanding and improving deep networks, whatever the domain.
@@ -62,7 +69,11 @@ In vision, this lens produced <a href="#spanet2023">SPANet (ICCV 2023)</a> and i
 extension <a href="#spanetv22026">SPANetV2 (IEEE TPAMI)</a>: convolutions and self-attention
 behave like high- and low-pass filters, and balancing them yields better token mixers and
 backbones. The same approach carries wherever deep networks are at work — medical imaging,
-robotics, reinforcement learning — and I am actively extending it beyond vision.</p>
+robotics, reinforcement learning. My current interests include:</p>
+`;
+
+/* Research Interests 마무리 문단 — 불릿 목록 아래 렌더링 (HTML 허용, 없으면 생략) */
+const INTERESTS_OUTRO_HTML = `
 <p>Earlier, I worked on shape-from-focus for 3D reconstruction and on perception for
 healthcare and assistive robotics — fall detection, gesture-based drone control, and
 robot-assisted services in hospital isolation wards.</p>
