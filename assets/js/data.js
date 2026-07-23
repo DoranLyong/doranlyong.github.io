@@ -60,8 +60,8 @@ Gwangju Institute of Science and Technology (GIST) and my B.S. in Control and
 Measurement Engineering from Gyeongsang National University.</p>
 <p>I will complete my Ph.D. in early 2027 and am
 <strong><em style="color:var(--heading)">actively looking for a postdoctoral position starting
-in Spring 2027</em></strong>. I am always ready to take on challenging research problems — in
-familiar territory or entirely new domains — so feel free to reach out.</p>
+in Spring 2027</em></strong> — ideally one where I can dig into hard problems, even in an
+entirely new domain. Feel free to reach out.</p>
 `;
 
 /* Research Interests 서두 문단 — 불릿 목록 위에 렌더링 (HTML 허용, 없으면 생략) */
