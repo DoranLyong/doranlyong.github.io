@@ -80,7 +80,7 @@ const INTERESTS_OUTRO_HTML = `
 /* Research Interests — 항목별 한 줄 (영역명: 키워드 나열) */
 const INTERESTS = [
   "<strong>Spectral Understanding of Deep Networks</strong>: frequency responses of convolution &amp; self-attention, graph spectral analysis, inductive biases.",
-  "<strong>Architecture Design</strong>: token mixers, backbone networks, efficient models for classification, detection, and segmentation.",
+  "<strong>Architecture Design</strong>: token mixers, backbone networks, general-purpose vision architectures.",
   "<strong>Video Understanding &amp; 3D Vision</strong>: temporal modeling, shape from focus.",
   "<strong>Vision for Robotics &amp; Healthcare</strong>: human-robot interaction, gesture interfaces, health monitoring.",
 ];
