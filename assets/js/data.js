@@ -73,8 +73,8 @@ design</strong>. Currently, my research interests include:</p>
 
 /* Research Interests 마무리 문단 — 불릿 목록 아래 렌더링 (HTML 허용, 없으면 생략) */
 const INTERESTS_OUTRO_HTML = `
-<p>Recently, I am especially interested in how the spectral perspective transfers
-<strong>beyond vision</strong> — to medical imaging, robotics, and reinforcement learning.</p>
+<p>I am deeply interested in understanding the <strong>theoretical foundations of
+machine learning</strong> and its applications in vision, healthcare, and robotics.</p>
 `;
 
 /* Research Interests — 항목별 한 줄 (영역명: 키워드 나열) */
