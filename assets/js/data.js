@@ -60,35 +60,29 @@ Gwangju Institute of Science and Technology (GIST) and my B.S. in Control and
 Measurement Engineering from Gyeongsang National University.</p>
 <p>I will complete my Ph.D. in early 2027 and am
 <strong><em style="color:var(--heading)">actively looking for a postdoctoral position starting
-in Spring 2027</em></strong> — ideally one where I can dig into hard problems, even in an
+in Spring 2027</em></strong> — ideally one where I can dig into fundamental challenges, even in an
 entirely new domain. Feel free to reach out.</p>
 `;
 
 /* Research Interests 서두 문단 — 불릿 목록 위에 렌더링 (HTML 허용, 없으면 생략) */
 const INTERESTS_INTRO_HTML = `
-<p>My research asks a simple question: <strong>what do deep neural networks actually see in the
-spectral domain?</strong> I use spectral analysis — frequency responses, graph spectra, filter
-behavior — as a general lens for understanding and improving deep networks, whatever the domain.
-In vision, this lens produced <a href="#spanet2023">SPANet (ICCV 2023)</a> and its journal
-extension <a href="#spanetv22026">SPANetV2 (IEEE TPAMI)</a>: convolutions and self-attention
-behave like high- and low-pass filters, and balancing them yields better token mixers and
-backbones. The same approach carries wherever deep networks are at work — medical imaging,
-robotics, reinforcement learning. My current interests include:</p>
+<p>My research goal is to understand <strong>what deep neural networks actually see in the
+spectral domain</strong>, and to turn that understanding into <strong>principled architecture
+design</strong>. Currently, my research interests include:</p>
 `;
 
 /* Research Interests 마무리 문단 — 불릿 목록 아래 렌더링 (HTML 허용, 없으면 생략) */
 const INTERESTS_OUTRO_HTML = `
-<p>Earlier, I worked on shape-from-focus for 3D reconstruction and on perception for
-healthcare and assistive robotics — fall detection, gesture-based drone control, and
-robot-assisted services in hospital isolation wards.</p>
+<p>Recently, I am especially interested in how the spectral perspective transfers
+<strong>beyond vision</strong> — to medical imaging, robotics, and reinforcement learning.</p>
 `;
 
-/* Research Interests — 항목별 한 줄 */
+/* Research Interests — 항목별 한 줄 (영역명: 키워드 나열) */
 const INTERESTS = [
-  "<strong>Spectral analysis of vision architectures</strong> — convolution vs. self-attention as frequency filters",
-  "<strong>Token mixers &amp; backbone design</strong> — efficient architectures for classification, detection, segmentation",
-  "<strong>Video understanding &amp; 3D vision</strong>",
-  "<strong>Vision for robotics</strong> — gesture interfaces, healthcare monitoring, shape from focus",
+  "<strong>Spectral Understanding of Deep Networks</strong>: frequency responses of convolution &amp; self-attention, graph spectral analysis, inductive biases.",
+  "<strong>Architecture Design</strong>: token mixers, backbone networks, efficient models for classification, detection, and segmentation.",
+  "<strong>Video Understanding &amp; 3D Vision</strong>: temporal modeling, shape from focus.",
+  "<strong>Vision for Robotics &amp; Healthcare</strong>: human-robot interaction, gesture interfaces, health monitoring.",
 ];
 
 /* 뉴스 — 최신순. html 안에서 #id 로 딥링크 가능
