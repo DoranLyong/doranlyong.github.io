@@ -61,11 +61,7 @@
 
 > ⚠️ **저장소 이름 규칙**: 개인 홈페이지 저장소는 반드시 `<계정명>.github.io` 여야 합니다.
 > 계정이 DoranLyong 이므로 저장소는 `DoranLyong.github.io`, 주소는 doranlyong.github.io 입니다.
->
-> ⚠️ **`projects/` 폴더는 절대 삭제 금지**: `projects/spanet/` 은 ICCV 2023 논문 초록에
-> 인쇄된 프로젝트 페이지 URL 입니다. 기존 저장소에서 복사해 두었으므로 함께 푸시하면
-> 기존 URL 이 그대로 유지됩니다. (같은 이유로 GitHub 계정명 변경도 금지 —
-> Pages 주소는 계정명 변경 시 리다이렉트되지 않아 논문 속 링크가 깨집니다.)
+
 
 ```bash
 # 0) git 사용자 설정 (최초 1회)
