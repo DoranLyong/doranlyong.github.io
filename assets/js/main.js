@@ -577,13 +577,8 @@
   function renderFooter() {
     const f = document.querySelector("footer.site-footer");
     if (!f) return;
-    let html =
-      "<span>© " + new Date().getFullYear() + " " + esc(SITE.name) + "</span>" +
-      "<span>" + esc(SITE.affiliation) + "</span>" +
-      '<a href="#" data-email data-email-text></a>';
-    if (SITE.cvLink) html += '<a href="' + SITE.cvLink + '" target="_blank" rel="noopener">CV (PDF)</a>';
-    html += "<span>Last updated: " + esc(SITE.updated) + "</span>";
-    f.innerHTML = html;
+    f.innerHTML =
+      '<span>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">Minimal Light</a> theme.</span>';
   }
 
   /* ---------- boot ---------- */
