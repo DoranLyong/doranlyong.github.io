@@ -89,6 +89,10 @@ const INTERESTS = [
    ⚠ 날짜는 근사치입니다. 정확한 날짜로 수정해 주세요. */
 const NEWS = [
   {
+    date: "2026-07-29",
+    html: 'Two papers on context-aware daily-life monitoring with egocentric vision and EEG have been accepted to <strong>EMBC 2026</strong>. <a href="#arousal2026">[paper 1]</a> <a href="#pebci2026">[paper 2]</a>',
+  },
+  {
     date: "2026-05-01",
     html: 'SPANetV2 (<em>Spectral-Adaptive Modulation Networks for Visual Perception</em>) has been accepted to <strong>IEEE TPAMI</strong>! <a href="#spanetv22026">[paper]</a> <a href="https://github.com/DoranLyong/SPANetV2-official" target="_blank" rel="noopener">[code]</a>',
   },
@@ -141,6 +145,48 @@ const PUBS = [
     ],
     bibtex:
       "@article{yun2026spanetv2,\n  title   = {Spectral-Adaptive Modulation Networks for Visual Perception},\n  author  = {Yun, Guhnoo and Yoo, Juhan and Kim, Kijung and Lee, Jeongho and Seo, Paul Hongsuck and Kim, Dong Hwan},\n  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},\n  year    = {2026},\n  doi     = {10.1109/TPAMI.2026.3690455},\n  note    = {Early Access}\n}",
+  },
+  {
+    id: "arousal2026",
+    category: "international",
+    theme: "robotics",
+    selected: false,
+    date: "2026-07-29",
+    title:
+      "Context-Aware Daily-Life Arousal Monitoring Using Egocentric Vision and EEG",
+    authors:
+      "Wooseok Hyung, Minsu Kim, Ye-Sung Kim, Joshua Lee, Byungha Ko, Guhnoo Yun, Dong Hwan Kim, Chang-Hwan Im",
+    venue:
+      "Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)",
+    badgeShort: "EMBC",
+    thumb: null,
+    links: [
+      {
+        label: "Program",
+        url: "https://cmsworkshops.com/EMBC2026/view_paper.php?PaperNum=5021&SessionID=1198",
+      },
+    ],
+  },
+  {
+    id: "pebci2026",
+    category: "international",
+    theme: "robotics",
+    selected: false,
+    date: "2026-07-29",
+    title:
+      "PeBCI: Vision-Guided Brain-Computer Interface for Context-Aware Neural Decoding in Daily Life",
+    authors:
+      "Ye-Sung Kim, Minsu Kim, Wooseok Hyung, Byungha Ko, Guhnoo Yun, Dong Hwan Kim, Chang-Hwan Im",
+    venue:
+      "Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)",
+    badgeShort: "EMBC",
+    thumb: null,
+    links: [
+      {
+        label: "Program",
+        url: "https://cmsworkshops.com/EMBC2026/view_paper.php?PaperNum=4958&SessionID=1198",
+      },
+    ],
   },
   {
     id: "ioi2026",
