@@ -32,7 +32,7 @@ const SITE = {
   rsLink: null, // Research statement PDF (있으면 버튼 자동 표시)
   portrait: "assets/img/profile.webp",
   canonical: "https://doranlyong.github.io/",
-  updated: "2026-07-23",
+  updated: "2026-08-21",
 };
 
 /* 3인칭 소개문 — "Copy bio" 버튼이 이 문자열을 복사합니다. */
@@ -428,7 +428,16 @@ const EDUCATION = [
 
 /* Honors & Awards — 항목을 추가하면 섹션이 자동으로 나타납니다.
    예: { year: "2023", text: "Best Poster Award, ..." }  */
-const AWARDS = [];
+const AWARDS = [
+  {
+    year: "2026",
+    text: "Outstanding Student Researcher Scholarship, Korea Institute of Science and Technology (KIST)",
+  },
+  {
+    year: "2020",
+    text: "<strong>Presidential Award</strong>, 2020 International Robot Contest — Humanoid Robot Sports (Deep Learning Algorithm), Ministry of the Interior and Safety",
+  },
+];
 
 /* Services & Skills */
 const SERVICES = {
