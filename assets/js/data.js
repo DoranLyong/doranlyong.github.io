@@ -434,8 +434,12 @@ const AWARDS = [
     text: "Outstanding Student Researcher Scholarship, Korea Institute of Science and Technology (KIST)",
   },
   {
+    year: "2023",
+    text: "Outstanding Technology Award, Korea Institute of Science and Technology (KIST)",
+  },
+  {
     year: "2020",
-    text: "<strong>Presidential Award</strong>, 2020 International Robot Contest — Humanoid Robot Sports (Deep Learning Algorithm), Ministry of the Interior and Safety",
+    text: "Presidential Award, 2020 International Robot Contest — Humanoid Robot Sports (Deep Learning Algorithm), Ministry of the Interior and Safety",
   },
 ];
 
