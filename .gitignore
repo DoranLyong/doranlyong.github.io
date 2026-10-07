@@ -1,0 +1,8 @@
+# 참고용 샘플 (타인 CV) — 공개 저장소에 올리지 않음
+assets/pdf/*_sample.pdf
+
+# 미발표 논문 초안 (CV 수치 대조용) — 공개 저장소에 올리지 않음
+cv/docs/
+
+# macOS
+.DS_Store

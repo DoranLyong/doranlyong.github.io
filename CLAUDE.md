@@ -55,4 +55,5 @@ SPANet (ICCV 2023) 논문용 별도 정적 페이지 (Nerfies/Bulma "Academic Pr
 
 - `SITE` : 이름/직함/소속/링크/CV·RS 경로/`updated` 날짜. 콘텐츠 갱신 시 `SITE.updated` 도 함께 갱신.
 - `date` 필드는 ISO(`YYYY-MM-DD`), **정렬용**이며 연도만 표시에 쓰입니다.
-- 논문 추가 시 필드 스키마와 미완료 콘텐츠 확인 항목(CV PDF, 뉴스 정확 날짜, 학사 입학연도 등)은 `README.md` 참고.
+- 논문 추가 시 필드 스키마와 미완료 콘텐츠 확인 항목(뉴스 정확 날짜, 학사 입학연도 등)은 `README.md` 참고.
+- **CV 는 data.js 와 별도 원본**: `cv/Guhnoo_Yun_CV.tex` → `assets/pdf/Guhnoo_Yun_CV.pdf` (빌드: README "CV 빌드"). 논문·수상·경력을 data.js 에 추가하면 CV 원본도 함께 갱신해 PDF 를 다시 빌드한다.

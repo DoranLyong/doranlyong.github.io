@@ -45,7 +45,7 @@
 ## 해야 할 일 (콘텐츠 확인)
 
 - [x] 프로필 사진: `assets/img/profile.webp` (얼굴 중심 600×600 크롭 적용됨)
-- [ ] `assets/pdf/Guhnoo_Yun_CV.pdf` 추가 후 `SITE.cvLink` 지정 → CV 버튼 자동 표시
+- [x] CV: `assets/pdf/Guhnoo_Yun_CV.pdf` (`SITE.cvLink` 지정됨 → CV 버튼 표시, 원본·빌드는 아래 "CV 빌드")
 - [ ] `NEWS` 날짜 정확한 날짜로 수정 (현재 근사치)
 - [ ] `EDUCATION` 학사 입학연도 확인 (졸업 2016만 확인됨), 박사과정 시작연도 추가
 - [ ] `AWARDS` 수상 내역 채우기 (현재 비어 있어 섹션 자동 숨김)
@@ -73,4 +73,14 @@ push 후 1~3분 뒤 https://doranlyong.github.io 에 반영됩니다
 ```bash
 python3 -m http.server 8000
 # → http://localhost:8000
+```
+
+## CV 빌드
+
+CV 원본은 `cv/Guhnoo_Yun_CV.tex` (pdfLaTeX, A4 2쪽). 수정 후 PDF 를 다시 만들어 덮어씁니다
+(보조 파일은 저장소 밖 임시 폴더에 생성):
+
+```bash
+latexmk -pdf -outdir=/tmp/cvbuild cv/Guhnoo_Yun_CV.tex
+cp /tmp/cvbuild/Guhnoo_Yun_CV.pdf assets/pdf/Guhnoo_Yun_CV.pdf
 ```

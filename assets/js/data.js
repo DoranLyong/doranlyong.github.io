@@ -28,11 +28,11 @@ const SITE = {
   twitter: "https://twitter.com/doranlyong219",
   blog: "https://ai-studynote.blogspot.com/",
   // CV PDF 를 assets/pdf/ 에 넣은 뒤 경로를 지정하면 버튼이 자동으로 나타납니다.
-  cvLink: null, // 예: "assets/pdf/Guhnoo_Yun_CV.pdf"
+  cvLink: "assets/pdf/Guhnoo_Yun_CV.pdf", // 원본: cv/Guhnoo_Yun_CV.tex (빌드는 README 참고)
   rsLink: null, // Research statement PDF (있으면 버튼 자동 표시)
   portrait: "assets/img/profile.webp",
   canonical: "https://doranlyong.github.io/",
-  updated: "2026-08-21",
+  updated: "2026-10-07",
 };
 
 /* 3인칭 소개문 — "Copy bio" 버튼이 이 문자열을 복사합니다. */
@@ -133,7 +133,7 @@ const PUBS = [
     authors:
       "Guhnoo Yun, Juhan Yoo, Kijung Kim, Jeongho Lee, Paul Hongsuck Seo, Dong Hwan Kim",
     venue:
-      "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), Early Access",
+      "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 48(10), pp. 11511–11525",
     badgeShort: "TPAMI",
     thumb: "assets/img/pub-tpami2026.webp",
     abstract:
@@ -144,7 +144,7 @@ const PUBS = [
       { label: "Code", url: "https://github.com/DoranLyong/SPANetV2-official" },
     ],
     bibtex:
-      "@article{yun2026spanetv2,\n  title   = {Spectral-Adaptive Modulation Networks for Visual Perception},\n  author  = {Yun, Guhnoo and Yoo, Juhan and Kim, Kijung and Lee, Jeongho and Seo, Paul Hongsuck and Kim, Dong Hwan},\n  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},\n  year    = {2026},\n  doi     = {10.1109/TPAMI.2026.3690455},\n  note    = {Early Access}\n}",
+      "@article{yun2026spanetv2,\n  title   = {Spectral-Adaptive Modulation Networks for Visual Perception},\n  author  = {Yun, Guhnoo and Yoo, Juhan and Kim, Kijung and Lee, Jeongho and Seo, Paul Hongsuck and Kim, Dong Hwan},\n  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},\n  volume  = {48},\n  number  = {10},\n  pages   = {11511--11525},\n  year    = {2026},\n  doi     = {10.1109/TPAMI.2026.3690455}\n}",
   },
   {
     id: "arousal2026",
@@ -187,6 +187,24 @@ const PUBS = [
         url: "https://cmsworkshops.com/EMBC2026/view_paper.php?PaperNum=4958&SessionID=1198",
       },
     ],
+  },
+  {
+    id: "vcpq2026",
+    category: "preprint",
+    theme: "robotics",
+    selected: false,
+    date: "2026-10-05",
+    title:
+      "Every View Counts: View-Consistent Panoptic Quality for Multi-view Panoptic Segmentation",
+    authors: "Youngmin Lee, Byungha Ko, Guhnoo Yun, Dong Hwan Kim",
+    venue: "arXiv preprint (under review)",
+    badgeShort: "arXiv",
+    thumb: null,
+    abstract:
+      "Multi-view panoptic segmentation assigns a semantic class and a scene-level instance ID to every pixel of an unordered set of images, and recent feed-forward 3D models predict these labels for the input views in a single forward pass. Their predictions, however, have been evaluated with the scene-level PQ (PQ^scene) borrowed from per-scene optimization methods, typically on rendered held-out views. PQ^scene tiles all views of a scene into a single image, so that a missed appearance or a change of ID lowers the score of the matched pair only in proportion to its area. We propose View-Consistent Panoptic Quality (VC-PQ), which extends PQ from a single image to a set of input views, counts equally every view in which an instance is visible, and penalizes a prediction that is not visible in the same views as its ground truth. A decomposition of VC-PQ attributes the score a method loses to mask accuracy, view consistency, and the matching threshold. A single additional parameter recovers the area weighting of tiling for comparison. Under a fixed evaluation protocol on ScanNet++ and ScanNetv2, recent feed-forward methods are evaluated with VC-PQ and PQ^scene, and the decomposition shows where each of them loses its score. Controlled perturbations of the ground truth show that VC-PQ responds to the number of views in which an instance is missed or changes ID, whereas PQ^scene responds to their area. The aim of this work is to make view consistency part of the evaluation of multi-view panoptic segmentation, with VC-PQ reported alongside PQ^scene.",
+    links: [{ label: "arXiv", url: "https://arxiv.org/abs/2610.05911" }],
+    bibtex:
+      "@article{lee2026every,\n  title   = {Every View Counts: View-Consistent Panoptic Quality for Multi-view Panoptic Segmentation},\n  author  = {Lee, Youngmin and Ko, Byungha and Yun, Guhnoo and Kim, Dong Hwan},\n  journal = {arXiv preprint arXiv:2610.05911},\n  year    = {2026},\n  doi     = {10.48550/arXiv.2610.05911}\n}",
   },
   {
     id: "ioi2026",
@@ -445,7 +463,7 @@ const AWARDS = [
 
 /* Services & Skills */
 const SERVICES = {
-  reviewer: [], // 예: "IEEE TPAMI", "CVPR 2026"
+  reviewer: ["ICPR 2024", "ICPR 2026"],
   skills: ["Python", "PyTorch", "C++", "MATLAB"],
   openSource: [
     {
