@@ -211,6 +211,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 
 /* WCAG 1.4.1: links in running text must not rely on color alone */
 #about-body a,
+.photo-box figcaption a,
 #services-body a,
 .news-box a,
 .entry-body a,
@@ -347,6 +348,90 @@ html[data-theme="dark"] .btn:hover {
   padding: 0;
 }
 .link-btn:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* ---------- about: photo box (collapsed, one photo at a time) ---------- */
+
+.photo-box {
+  margin: 14px 0 0;
+  font-size: 15px;
+}
+
+.photo-box summary {
+  width: fit-content;
+  cursor: pointer;
+}
+.photo-box summary:hover { color: var(--link-hover); }
+.photo-box summary em { color: var(--text-light); }
+
+.photo-gallery {
+  position: relative;
+  margin-top: 10px;
+  padding: 16px 20px 14px;
+  background: var(--box-bg);
+  border: 1px solid var(--box-border);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.photo-slide { display: none; margin: 0; }
+.photo-slide.active { display: block; animation: photo-fade 0.3s ease; }
+@keyframes photo-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.photo-slide a { display: inline-block; }
+.photo-slide img {
+  display: block;
+  height: 300px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.photo-slide figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* prev / next sit on the image's vertical center (16px padding + half of 300px) */
+.photo-nav {
+  position: absolute;
+  top: 166px;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--box-border);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.photo-nav:hover { opacity: 1; color: var(--link-hover); }
+.photo-nav svg { width: 11px; height: 11px; fill: currentColor; }
+.photo-nav.prev { left: 10px; }
+.photo-nav.next { right: 10px; }
+
+.photo-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.photo-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ghost);
+  cursor: pointer;
+}
+.photo-dot.active { background: var(--text-light); }
 
 /* ---------- publications ---------- */
 
@@ -681,12 +766,16 @@ footer.site-footer a:hover { color: var(--link-hover); }
   .entry-when { flex: none; }
   .news-box li { flex-direction: column; gap: 0; }
   .news-date { flex: none; }
+  .photo-gallery { padding: 14px 12px 12px; }
+  .photo-slide img { height: 260px; }
+  .photo-nav { top: 144px; } /* 14px padding + half of 260px */
 }
 
 /* respect users who prefer no motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
+  .photo-slide.active { animation: none; }
 }
 
 /* print: browsers strip backgrounds, so force the light palette */

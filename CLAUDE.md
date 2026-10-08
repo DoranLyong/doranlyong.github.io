@@ -24,7 +24,7 @@ git add -A && git commit -m "..." && git push
 
 `index.html` 은 **빈 섹션 컨테이너만** 담은 껍데기입니다. 실제 콘텐츠는 없고, 두 스크립트가 런타임에 채웁니다:
 
-- **`assets/js/data.js`** — 사이트의 **모든 콘텐츠**를 담은 전역 상수: `SITE`, `BIO`, `ABOUT_HTML`, `INTERESTS_INTRO_HTML`, `INTERESTS`, `INTERESTS_OUTRO_HTML`, `NEWS`, `THEMES`, `PUBS`, `EXPERIENCE`, `EDUCATION`, `AWARDS`, `SERVICES`. (About 은 신상·소속만, 연구 서사는 Interests 의 intro/outro 문단에 둔다.)
+- **`assets/js/data.js`** — 사이트의 **모든 콘텐츠**를 담은 전역 상수: `SITE`, `BIO`, `ABOUT_HTML`, `PHOTOS`, `INTERESTS_INTRO_HTML`, `INTERESTS`, `INTERESTS_OUTRO_HTML`, `NEWS`, `THEMES`, `PUBS`, `EXPERIENCE`, `EDUCATION`, `AWARDS`, `SERVICES`. (About 은 신상·소속만, 연구 서사는 Interests 의 intro/outro 문단에 둔다.)
 - **`assets/js/main.js`** — 위 전역들을 읽어 DOM 을 렌더하는 vanilla JS (IIFE, 프레임워크 없음). `DOMContentLoaded` 에서 `renderSidebar → renderIndex → renderPubs → renderFooter → initEmail → initTheme` 순서로 실행.
 
 > **가장 중요한 규칙: 콘텐츠 수정은 `data.js` 에서만 한다.** 이름·논문·뉴스·경력 등을 바꿀 때 HTML/CSS/main.js 는 건드리지 않습니다. main.js/CSS 는 *렌더링 방식/디자인*을 바꿀 때만 수정합니다.
@@ -36,7 +36,7 @@ git add -A && git commit -m "..." && git push
 - **제목 링크**: `links` 배열의 **첫 번째** 항목 URL 이 논문 제목의 하이퍼링크가 됩니다.
 - **저자 강조**: 저자 문자열 안의 `SITE.name` 이 정규식으로 자동 하이라이트됩니다.
 - **딥링크**: 각 논문 `li` 의 id 는 `PUBS[].id` (예: `#spanet2023`). `NEWS` 항목에서 이 앵커로 링크하며, 해시로 접근하면 자동으로 All 탭으로 전환 후 스크롤합니다. **`id` 를 바꾸면 뉴스 링크와 외부 링크가 깨질 수 있으니 주의.**
-- **섹션 자동 숨김**: `AWARDS` 가 빈 배열이면 Honors 섹션이, `SERVICES` 의 하위 배열이 모두 비면 Services 섹션이 숨겨집니다. `SITE.cvLink`/`rsLink` 가 `null` 이면 해당 버튼이 나타나지 않습니다.
+- **섹션 자동 숨김**: `AWARDS` 가 빈 배열이면 Honors 섹션이, `SERVICES` 의 하위 배열이 모두 비면 Services 섹션이 숨겨집니다. `SITE.cvLink`/`rsLink` 가 `null` 이면 해당 버튼이 나타나지 않습니다. `PHOTOS.items` 가 비면 About 끝(버튼 아래)의 접이식 사진 상자가 나타나지 않습니다.
 - **이메일 난독화**: 크롤러 방지를 위해 `SITE.emailUser` / `emailDomain` 를 분리 저장하고 main.js 가 런타임에 조립합니다. (통짜 이메일 문자열을 HTML 에 넣지 말 것.)
 - **테마**: FOUC 방지를 위해 `index.html` `<head>` 의 pre-paint 인라인 스크립트가 `data-theme` 를 먼저 설정 → 이후 main.js `initTheme` 가 토글 처리. 상태는 `localStorage["theme"]`. 디자인은 orderedlist/minimal 기반(네이비/오렌지 팔레트), CSS 는 `assets/css/style.css` 단일 파일.
 

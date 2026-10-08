@@ -100,6 +100,10 @@
       '<svg viewBox="0 0 384 512" aria-hidden="true"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>',
     sun:
       '<svg viewBox="0 0 512 512" aria-hidden="true"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>',
+    prev:
+      '<svg viewBox="0 0 320 512" aria-hidden="true"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>',
+    next:
+      '<svg viewBox="0 0 320 512" aria-hidden="true"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>',
   };
 
   /* ---------- section nav (shared by sidebar + mobile top bar) ---------- */
@@ -267,10 +271,99 @@
 
   /* ---------- index page ---------- */
 
+  /* About photo box: <details> holding a one-at-a-time gallery (nav only with 2+ photos) */
+  function renderPhotos(p) {
+    const box = el("details", "photo-box");
+    box.appendChild(
+      el("summary", null, esc(p.summary) + (p.note ? " <em>(" + esc(p.note) + ")</em>" : ""))
+    );
+
+    const gallery = el("div", "photo-gallery");
+    gallery.setAttribute("role", "group");
+    gallery.setAttribute("aria-label", "Photos");
+    const slides = p.items.map(function (item, i) {
+      const fig = el("figure", "photo-slide" + (i === 0 ? " active" : ""));
+      const a = el("a");
+      a.href = item.src;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.title = "Open full size";
+      const img = el("img");
+      img.src = item.src;
+      img.alt = item.alt || "";
+      img.loading = "lazy"; // not fetched until the box is opened
+      a.appendChild(img);
+      fig.appendChild(a);
+      if (item.caption) fig.appendChild(el("figcaption", null, item.caption));
+      gallery.appendChild(fig);
+      return fig;
+    });
+    box.appendChild(gallery);
+    if (slides.length < 2) return box;
+
+    let cur = 0;
+    const dotRow = el("div", "photo-dots");
+    const dots = slides.map(function (_, i) {
+      const d = el("button", "photo-dot" + (i === 0 ? " active" : ""));
+      d.type = "button";
+      d.setAttribute("aria-label", "Photo " + (i + 1) + " of " + slides.length);
+      d.addEventListener("click", function () {
+        show(i);
+      });
+      dotRow.appendChild(d);
+      return d;
+    });
+
+    function show(i) {
+      cur = (i + slides.length) % slides.length;
+      slides.forEach(function (s, k) {
+        s.classList.toggle("active", k === cur);
+      });
+      dots.forEach(function (d, k) {
+        d.classList.toggle("active", k === cur);
+      });
+    }
+
+    [["prev", -1, "Previous photo"], ["next", 1, "Next photo"]].forEach(function (b) {
+      const btn = el("button", "photo-nav " + b[0], ICONS[b[0]]);
+      btn.type = "button";
+      btn.setAttribute("aria-label", b[2]);
+      btn.addEventListener("click", function () {
+        show(cur + b[1]);
+      });
+      gallery.appendChild(btn);
+    });
+    gallery.appendChild(dotRow);
+
+    /* arrow keys while focus is inside the gallery; swipe on touch screens */
+    gallery.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") show(cur - 1);
+      else if (e.key === "ArrowRight") show(cur + 1);
+    });
+    let touchX = null;
+    gallery.addEventListener("touchstart", function (e) {
+      touchX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    gallery.addEventListener("touchend", function (e) {
+      if (touchX == null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      touchX = null;
+      if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+
+    return box;
+  }
+
   function renderIndex() {
     /* about + interests */
     const about = document.getElementById("about-body");
     if (about) about.innerHTML = ABOUT_HTML;
+
+    /* photo box at the very end of About, below the action buttons (hidden when empty) */
+    const aboutSection = document.getElementById("about");
+    if (aboutSection && typeof PHOTOS !== "undefined" && PHOTOS.items.length) {
+      aboutSection.appendChild(renderPhotos(PHOTOS));
+    }
 
     const interests = document.getElementById("interests-body");
     if (interests) {

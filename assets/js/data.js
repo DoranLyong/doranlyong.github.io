@@ -4,6 +4,7 @@
 
    - SITE   : 이름, 소속, 링크, CV 경로 등 기본 정보
    - BIO    : 초청 강연/위원회 제출용 3인칭 소개문 ("Copy bio" 버튼용)
+   - PHOTOS : About 끝의 접이식 사진 상자 (items 가 비면 숨김)
    - NEWS   : 최신순 뉴스. date 는 ISO(YYYY-MM-DD)
    - THEMES : 논문 필터 칩 (All 탭에서 표시, key: 표시명)
    - PUBS   : 논문 목록. Selected|All 탭 — selected:true 인 항목이 Selected 탭에 노출,
@@ -32,7 +33,7 @@ const SITE = {
   rsLink: null, // Research statement PDF (있으면 버튼 자동 표시)
   portrait: "assets/img/profile.webp",
   canonical: "https://doranlyong.github.io/",
-  updated: "2026-10-07",
+  updated: "2026-10-08",
 };
 
 /* 3인칭 소개문 — "Copy bio" 버튼이 이 문자열을 복사합니다. */
@@ -63,6 +64,22 @@ Measurement Engineering from Gyeongsang National University.</p>
 in Spring 2027</em></strong> — ideally one where I can dig into fundamental challenges, even in an
 entirely new domain. Feel free to reach out.</p>
 `;
+
+/* About 끝(버튼 아래)의 사진 상자 — 접힌 채 시작하고, 펼치면 한 장씩 넘겨 봅니다.
+   items 가 비면 상자를 숨김. 첫 항목이 처음 보이는 사진, caption 은 HTML 허용.
+   사진 파일은 assets/img/ 에 두며, 사진을 누르면 원본이 새 탭에서 열립니다. */
+const PHOTOS = {
+  summary: "A few photos",
+  note: "updated from time to time",
+  items: [
+    {
+      src: "assets/img/ICCV2023_with_Zisserman.jpg",
+      alt: "With Andrew Zisserman at ICCV 2023",
+      caption:
+        'With <a href="https://www.robots.ox.ac.uk/~az/" target="_blank" rel="noopener">Prof. Andrew Zisserman</a> at ICCV 2023, Paris',
+    },
+  ],
+};
 
 /* Research Interests 서두 문단 — 불릿 목록 위에 렌더링 (HTML 허용, 없으면 생략) */
 const INTERESTS_INTRO_HTML = `
