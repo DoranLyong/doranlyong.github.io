@@ -121,9 +121,10 @@ image generation.\par}
         in one graph-spectral framework, showing that window size shapes their frequency responses,
         and turned this into a mixer with multi-scale kernels and spectral re-scaling; the backbone
         outperforms state-of-the-art models on ImageNet-1K, COCO, and ADE20K. \rt{J1}
-  \item \textbf{SPANet} (ICCV~2023): contrary to the prevailing idea of strengthening self-attention's
-        high-pass filtering, showed that \emph{balancing} high and low frequencies in token mixers
-        improves performance. \rt{C3}
+  \item \textbf{SPANet} (ICCV~2023): self-attention acts as a low-pass filter and convolution retains
+        high frequencies. Prior work improved self-attention with stronger high-pass filtering; SPANet
+        showed that stronger low-pass filtering also improves convolution, and that \emph{balancing}
+        high and low frequencies in a token mixer improves performance. \rt{C3}
 \end{itemize}
 
 \cvtopic{Applied Vision for Robotics, Healthcare \& 3D Shape Recovery}
