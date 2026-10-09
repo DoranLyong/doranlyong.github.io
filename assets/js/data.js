@@ -73,6 +73,11 @@ const PHOTOS = {
   note: "updated from time to time",
   items: [
     {
+      src: "assets/img/KIST2026_award.JPG",
+      alt: "Receiving the KIST Outstanding Student Researcher Scholarship, 2026",
+      caption: "Receiving the Outstanding Student Researcher Scholarship at KIST, 2026",
+    },
+    {
       src: "assets/img/ICCV2023_with_Zisserman.jpg",
       alt: "With Andrew Zisserman at ICCV 2023",
       caption:

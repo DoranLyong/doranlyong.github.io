@@ -293,7 +293,9 @@
       img.alt = item.alt || "";
       img.loading = "lazy"; // not fetched until the box is opened
       a.appendChild(img);
-      fig.appendChild(a);
+      const stage = el("div", "photo-stage"); // fixed height: no jump between portrait/landscape
+      stage.appendChild(a);
+      fig.appendChild(stage);
       if (item.caption) fig.appendChild(el("figcaption", null, item.caption));
       gallery.appendChild(fig);
       return fig;
