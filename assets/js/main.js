@@ -274,6 +274,7 @@
   /* About photo box: <details> holding a one-at-a-time gallery (nav only with 2+ photos) */
   function renderPhotos(p) {
     const box = el("details", "photo-box");
+    box.open = !!p.open;
     box.appendChild(
       el("summary", null, esc(p.summary) + (p.note ? " <em>(" + esc(p.note) + ")</em>" : ""))
     );

@@ -9,7 +9,7 @@
     (function () {
       try {
         var t = localStorage.getItem("theme");
-        if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (!t) t = "light"; // default light, same as index.html
         document.documentElement.setAttribute("data-theme", t);
       } catch (e) {}
     })();

@@ -13,13 +13,13 @@
   <meta name="twitter:card" content="summary">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- pre-paint theme: 다크모드 깜빡임 방지 -->
+  <!-- pre-paint theme: 다크모드 깜빡임 방지. 저장된 선택이 없으면 OS 설정과 무관하게 라이트 -->
   <script>
     (function () {
       try {
         var m = location.search.match(/[?&]theme=(dark|light)/);
         var t = m ? m[1] : localStorage.getItem("theme");
-        if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (!t) t = "light";
         document.documentElement.setAttribute("data-theme", t);
       } catch (e) {}
     })();

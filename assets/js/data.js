@@ -33,7 +33,7 @@ const SITE = {
   rsLink: null, // Research statement PDF (있으면 버튼 자동 표시)
   portrait: "assets/img/profile.webp",
   canonical: "https://doranlyong.github.io/",
-  updated: "2026-10-08",
+  updated: "2026-10-11",
 };
 
 /* 3인칭 소개문 — "Copy bio" 버튼이 이 문자열을 복사합니다. */
@@ -65,12 +65,13 @@ in Spring 2027</em></strong> — ideally one where I can dig into fundamental ch
 entirely new domain. Feel free to reach out.</p>
 `;
 
-/* About 끝(버튼 아래)의 사진 상자 — 접힌 채 시작하고, 펼치면 한 장씩 넘겨 봅니다.
+/* About 끝(버튼 아래)의 사진 상자 — 한 장씩 넘겨 봅니다. open 으로 처음에 펼칠지 정합니다.
    items 가 비면 상자를 숨김. 첫 항목이 처음 보이는 사진, caption 은 HTML 허용.
    사진 파일은 assets/img/ 에 두며, 사진을 누르면 원본이 새 탭에서 열립니다. */
 const PHOTOS = {
   summary: "A few photos",
   note: "updated from time to time",
+  open: true, // true = 펼친 상태로 시작, false = 접힌 상태로 시작
   items: [
     {
       src: "assets/img/KIST2026_award.JPG",

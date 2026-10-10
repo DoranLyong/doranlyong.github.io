@@ -38,7 +38,7 @@ git add -A && git commit -m "..." && git push
 - **딥링크**: 각 논문 `li` 의 id 는 `PUBS[].id` (예: `#spanet2023`). `NEWS` 항목에서 이 앵커로 링크하며, 해시로 접근하면 자동으로 All 탭으로 전환 후 스크롤합니다. **`id` 를 바꾸면 뉴스 링크와 외부 링크가 깨질 수 있으니 주의.**
 - **섹션 자동 숨김**: `AWARDS` 가 빈 배열이면 Honors 섹션이, `SERVICES` 의 하위 배열이 모두 비면 Services 섹션이 숨겨집니다. `SITE.cvLink`/`rsLink` 가 `null` 이면 해당 버튼이 나타나지 않습니다. `PHOTOS.items` 가 비면 About 끝(버튼 아래)의 접이식 사진 상자가 나타나지 않습니다.
 - **이메일 난독화**: 크롤러 방지를 위해 `SITE.emailUser` / `emailDomain` 를 분리 저장하고 main.js 가 런타임에 조립합니다. (통짜 이메일 문자열을 HTML 에 넣지 말 것.)
-- **테마**: FOUC 방지를 위해 `index.html` `<head>` 의 pre-paint 인라인 스크립트가 `data-theme` 를 먼저 설정 → 이후 main.js `initTheme` 가 토글 처리. 상태는 `localStorage["theme"]`. 디자인은 orderedlist/minimal 기반(네이비/오렌지 팔레트), CSS 는 `assets/css/style.css` 단일 파일.
+- **테마**: FOUC 방지를 위해 `index.html` `<head>` 의 pre-paint 인라인 스크립트가 `data-theme` 를 먼저 설정 → 이후 main.js `initTheme` 가 토글 처리. 상태는 `localStorage["theme"]`, 저장된 선택이 없으면 OS 설정과 무관하게 라이트 모드로 시작. 디자인은 orderedlist/minimal 기반(네이비/오렌지 팔레트), CSS 는 `assets/css/style.css` 단일 파일.
 
 ### 2. `projects/spanet/` — 독립 프로젝트 페이지 (건드리지 말 것)
 
