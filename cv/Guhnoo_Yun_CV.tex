@@ -20,6 +20,7 @@
 \usepackage{tabularx}
 \usepackage{eso-pic}
 \usepackage[normalem]{ulem}
+\usepackage{etoolbox}
 \usepackage{hyperref}
 \input{glyphtounicode}
 \pdfgentounicode=1
@@ -27,7 +28,7 @@
 \definecolor{cvblue}{RGB}{44,81,164}    % band, name, headings
 \definecolor{cvgray}{RGB}{127,127,127}  % contact block
 \definecolor{cvlink}{RGB}{79,129,189}   % links
-\hypersetup{colorlinks=true, urlcolor=cvlink, linkcolor=cvlink,
+\hypersetup{colorlinks=true, urlcolor=cvlink, linkcolor=cvblue,  % internal links = [n] references
   pdftitle={Guhnoo Yun - Curriculum Vitae}, pdfauthor={Guhnoo Yun},
   pdfsubject={Curriculum Vitae},
   pdfkeywords={generative models, image generation, diffusion transformers, DiT, linear attention,
@@ -73,8 +74,14 @@
     align=left, font=\normalfont\color{cvblue}\bfseries, itemsep=5pt, topsep=2pt, parsep=0pt,
     before={\raggedright\interlinepenalty=10000}]}%  % keep each entry on one page
   {\end{description}}
-\newcommand{\pub}[2]{\item[{[#1]}] #2}
-\newcommand{\rt}[1]{\unskip~{\color{cvblue}\scriptsize\bfseries[#1]}}  % in-text reference (tied)
+% each entry is a link target pub:<n>; the anchor is raised so the jump shows the whole line
+\newcommand{\pub}[2]{\item[{\raisebox{1.2em}{\hypertarget{pub:#1}{}}[#1]}] #2}
+% in-text reference (tied): \rt{4} -> [4], \rt{2, 3} -> [2, 3]; each number links to its entry
+\makeatletter
+\newcommand{\rt}[1]{\unskip~{\color{cvblue}\scriptsize\bfseries[%
+  \def\rt@sep{\def\rt@sep{, }}%
+  \renewcommand*{\do}[1]{\rt@sep\hyperlink{pub:##1}{##1}}\docsvlist{#1}]}}
+\makeatother
 \newcommand{\me}{\uline{Guhnoo Yun}}
 \newcommand{\lnk}[2]{\href{#1}{\uline{#2}}}
 \newcommand{\doi}[1]{[doi: \lnk{https://doi.org/#1}{#1}]}
@@ -161,11 +168,11 @@ In the next step, I plan to do the same for video generation and world models at
 
     \cvtopic{Spectral Analysis of Convolution and Attention for Vision Backbones}
     \begin{itemize}
-      \item \textbf{SPANetV2} (TPAMI~2026): compared what convolution and self-attention pass or
+      \item Developed \textbf{SPANetV2}: compared what convolution and self-attention pass or
             suppress in one graph-spectral framework, showing that window size shapes their frequency
             responses, and turned this into a mixer with multi-scale kernels and spectral re-scaling;
             the backbone outperforms state-of-the-art models on ImageNet-1K, COCO, and ADE20K. \rt{1}
-      \item \textbf{SPANet} (ICCV~2023): prior work found that self-attention acts as a low-pass
+      \item Proposed \textbf{SPANet}: prior work found that self-attention acts as a low-pass
             filter, while convolution retains high frequencies, and that stronger high-pass filtering
             helps self-attention. SPANet showed that stronger low-pass filtering also helps
             convolution, and that a token mixer \emph{balancing} high and low frequencies improves
