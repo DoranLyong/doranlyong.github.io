@@ -68,7 +68,7 @@
 \newcommand{\detail}[1]{{\leftskip=0.8em #1\par}}            % indented detail line
 \newcommand{\cvtopic}[1]{\par\vspace{5pt}{\bfseries #1\par}}
 \newcommand{\cvsub}[1]{\par\vspace{6pt}{\color{cvblue}\bfseries #1\par}\vspace{2pt}}
-% publications: [J1]/[C1]/[P1] labels hang in the left margin of the list
+% publications: [1], [2], ... (numbered in list order) hang in the left margin of the list
 \newenvironment{pubs}{\begin{description}[leftmargin=2.6em, labelwidth=2.2em, labelsep=0.4em,
     align=left, font=\normalfont\color{cvblue}\bfseries, itemsep=5pt, topsep=2pt, parsep=0pt,
     before={\raggedright\interlinepenalty=10000}]}%  % keep each entry on one page
@@ -144,7 +144,7 @@ In the next step, I plan to do the same for video generation and world models at
     \textbf{Korea Institute of Science and Technology (KIST)}\par
     Supervisor: Dr.\ Dong Hwan Kim\par
 
-    \cvtopic{Linear Attention for Generative and Vision Transformers (SALAFormer; in preparation \rt{P2})}
+    \cvtopic{Linear Attention for Generative and Vision Transformers (SALAFormer; in preparation \rt{11})}
     \begin{itemize}
       \item Designed \textbf{SALA} (Spectral-Adaptive Linear Attention) as closed-form associative
             memory: each head solves a small ridge regression for what to store in its fixed-size
@@ -164,29 +164,29 @@ In the next step, I plan to do the same for video generation and world models at
       \item \textbf{SPANetV2} (TPAMI~2026): compared what convolution and self-attention pass or
             suppress in one graph-spectral framework, showing that window size shapes their frequency
             responses, and turned this into a mixer with multi-scale kernels and spectral re-scaling;
-            the backbone outperforms state-of-the-art models on ImageNet-1K, COCO, and ADE20K. \rt{J1}
+            the backbone outperforms state-of-the-art models on ImageNet-1K, COCO, and ADE20K. \rt{1}
       \item \textbf{SPANet} (ICCV~2023): prior work found that self-attention acts as a low-pass
             filter, while convolution retains high frequencies, and that stronger high-pass filtering
             helps self-attention. SPANet showed that stronger low-pass filtering also helps
             convolution, and that a token mixer \emph{balancing} high and low frequencies improves
-            accuracy. \rt{C3}
+            accuracy. \rt{4}
     \end{itemize}
 
     \cvtopic{Applied Vision for Robotics, Healthcare \& 3D Shape Recovery}
     \begin{itemize}
-      \item Fall detection of older adults by a healthcare robot \rt{C5}; robot-assisted services in
-            isolation wards \rt{C4}; \mbox{daily-life} arousal monitoring and brain--computer interface
-            decoding with egocentric vision and EEG \rt{C1}\rt{C2}; a \mbox{view-consistent}
-            evaluation metric for multi-view panoptic segmentation \rt{P1}.
+      \item Fall detection of older adults by a healthcare robot \rt{6}; robot-assisted services in
+            isolation wards \rt{5}; \mbox{daily-life} arousal monitoring and brain--computer interface
+            decoding with egocentric vision and EEG \rt{2, 3}; a \mbox{view-consistent}
+            evaluation metric for multi-view panoptic segmentation \rt{10}.
       \item Shape from focus, a follow-up to the M.S.\ thesis: 3D shape from few images with
-            Gaussian-process regression \rt{C6}.
+            Gaussian-process regression \rt{7}.
     \end{itemize}
   \item[2018 -- 2019] \textbf{Intern Researcher}\par
     Center for Intelligent Robotics, \textbf{KIST}
     \begin{itemize}
       \item Perception for healthcare robots: detecting when people with dementia leave home, to keep
-            them from going missing \rt{C8}; accelerometer--depth fall detection for older adults
-            \rt{C7}, later extended with LSTMs \rt{C5}.
+            them from going missing \rt{9}; accelerometer--depth fall detection for older adults
+            \rt{8}, later extended with LSTMs \rt{6}.
     \end{itemize}
 \end{entries}
 
@@ -194,41 +194,41 @@ In the next step, I plan to do the same for video generation and world models at
 \cvsection{Publications}
 \cvsub{Published / Accepted}
 \begin{pubs}
-  \pub{J1}{\me, J.~Yoo, K.~Kim, J.~Lee, P.H.~Seo, D.H.~Kim, \textbf{Spectral-Adaptive Modulation
+  \pub{1}{\me, J.~Yoo, K.~Kim, J.~Lee, P.H.~Seo, D.H.~Kim, \textbf{Spectral-Adaptive Modulation
     Networks for Visual Perception.} \textit{IEEE Trans.\ Pattern Anal.\ Mach.\ Intell.\ (TPAMI)}
     48(10), 11511--11525 (2026). \doi{10.1109/TPAMI.2026.3690455}
     [\lnk{https://arxiv.org/abs/2503.23947}{arXiv}]
     [\lnk{https://github.com/DoranLyong/SPANetV2-official}{code}]}
-  \pub{C1}{W.~Hyung, M.~Kim, Y.-S.~Kim, J.~Lee, B.~Ko, \me, D.H.~Kim, C.-H.~Im,
+  \pub{2}{W.~Hyung, M.~Kim, Y.-S.~Kim, J.~Lee, B.~Ko, \me, D.H.~Kim, C.-H.~Im,
     \textbf{Context-Aware Daily-Life Arousal Monitoring Using Egocentric Vision and EEG.}
     \textit{Annu.\ Int.\ Conf.\ IEEE Eng.\ Med.\ Biol.\ Soc.\ (EMBC)} (2026).
     [\lnk{https://cmsworkshops.com/EMBC2026/view_paper.php?PaperNum=5021&SessionID=1198}{program}]}
-  \pub{C2}{Y.-S.~Kim, M.~Kim, W.~Hyung, B.~Ko, \me, D.H.~Kim, C.-H.~Im, \textbf{PeBCI: Vision-Guided
+  \pub{3}{Y.-S.~Kim, M.~Kim, W.~Hyung, B.~Ko, \me, D.H.~Kim, C.-H.~Im, \textbf{PeBCI: Vision-Guided
     \mbox{Brain-Computer} Interface for Context-Aware Neural Decoding in Daily Life.}
     \textit{Annu.\ Int.\ Conf.\ IEEE Eng.\ Med.\ Biol.\ Soc.\ (EMBC)} (2026).
     [\lnk{https://cmsworkshops.com/EMBC2026/view_paper.php?PaperNum=4958&SessionID=1198}{program}]}
-  \pub{C3}{\me, J.~Yoo, K.~Kim, J.~Lee, D.H.~Kim, \textbf{SPANet: Frequency-balancing Token Mixer
+  \pub{4}{\me, J.~Yoo, K.~Kim, J.~Lee, D.H.~Kim, \textbf{SPANet: Frequency-balancing Token Mixer
     using Spectral Pooling Aggregation Modulation.} \textit{IEEE/CVF Int.\ Conf.\ on Computer Vision
     (ICCV)}, 6090--6101 (2023). \doi{10.1109/ICCV51070.2023.00562}
     [\lnk{https://openaccess.thecvf.com/content/ICCV2023/html/Yun_SPANet_Frequency-balancing_Token_Mixer_using_Spectral_Pooling_Aggregation_Modulation_ICCV_2023_paper.html}{CVF}]
     [\lnk{https://arxiv.org/abs/2308.11568}{arXiv}]
     [\lnk{https://doranlyong.github.io/projects/spanet/}{project}]
     [\lnk{https://github.com/DoranLyong/SPANet-official}{code}]}
-  \pub{C4}{Y.~Kwon, S.~Shin, K.~Yang, S.~Park, S.~Shin, H.~Jeon, K.~Kim, \me, \ldots, Y.~Lim,
+  \pub{5}{Y.~Kwon, S.~Shin, K.~Yang, S.~Park, S.~Shin, H.~Jeon, K.~Kim, \me, \ldots, Y.~Lim,
     \textbf{Heterogeneous Robot-Assisted Services in Isolation Wards: A System Development and
     Usability Study.} \textit{IEEE/RSJ Int.\ Conf.\ on Intelligent Robots and Systems (IROS)},
     8069--8076 (2023). \doi{10.1109/IROS55552.2023.10341857}}
-  \pub{C5}{K.~Kim, \me, S.-K.~Park, D.H.~Kim, \textbf{Efficient Fall Detection for a Healthcare Robot
+  \pub{6}{K.~Kim, \me, S.-K.~Park, D.H.~Kim, \textbf{Efficient Fall Detection for a Healthcare Robot
     System Based on 3-Axis Accelerometer and Depth Sensor Fusion with LSTM Networks.}
     \textit{Int.\ Conf.\ on Pattern Recognition (ICPR)}, 2207--2212 (2022).
     \doi{10.1109/ICPR56361.2022.9956418}}
-  \pub{C6}{H.-S.~Jang, \me, M.T.~Mahmood, M.-K.~Kang, \textbf{Optimal Sampling for Shape from Focus
+  \pub{7}{H.-S.~Jang, \me, M.T.~Mahmood, M.-K.~Kang, \textbf{Optimal Sampling for Shape from Focus
     by Using Gaussian Process Regression.} \textit{IEEE Int.\ Conf.\ on Consumer Electronics
     (ICCE)}, 1--4 (2020). \doi{10.1109/ICCE46568.2020.9043150}}
-  \pub{C7}{K.~Kim, \me, S.-K.~Park, D.H.~Kim, \textbf{Fall Detection for the Elderly Based on 3-Axis
+  \pub{8}{K.~Kim, \me, S.-K.~Park, D.H.~Kim, \textbf{Fall Detection for the Elderly Based on 3-Axis
     Accelerometer and Depth Sensor Fusion with Random Forest Classifier.} \textit{Annu.\ Int.\ Conf.\
     IEEE Eng.\ Med.\ Biol.\ Soc.\ (EMBC)}, 4611--4614 (2019). \doi{10.1109/EMBC.2019.8856698}}
-  \pub{C8}{\me, K.~Kim, S.-K.~Park, D.H.~Kim, \textbf{A Monitoring System to Support Home Health Care
+  \pub{9}{\me, K.~Kim, S.-K.~Park, D.H.~Kim, \textbf{A Monitoring System to Support Home Health Care
     for the Elderly with Dementia by Detecting Going Out Activities Based on RGB-D Sensors.}
     \textit{Int.\ Conf.\ on Ubiquitous Robots (UR)}, 71--76 (2019).
     \doi{10.1109/URAI.2019.8768598}}
@@ -236,14 +236,14 @@ In the next step, I plan to do the same for video generation and world models at
 
 \cvsub{Under Review}
 \begin{pubs}
-  \pub{P1}{Y.~Lee, B.~Ko, \me, D.H.~Kim, \textbf{Every View Counts: View-Consistent Panoptic Quality
+  \pub{10}{Y.~Lee, B.~Ko, \me, D.H.~Kim, \textbf{Every View Counts: View-Consistent Panoptic Quality
     for Multi-view Panoptic Segmentation.} \textit{arXiv preprint} (2026).
     [arXiv: \lnk{https://arxiv.org/abs/2610.05911}{2610.05911}]}
 \end{pubs}
 
 \cvsub{In Preparation}
 \begin{pubs}
-  \pub{P2}{\me\ et al., \textbf{SALAFormer: Spectral-Adaptive Linear Attention as Closed-Form
+  \pub{11}{\me\ et al., \textbf{SALAFormer: Spectral-Adaptive Linear Attention as Closed-Form
     Associative Memory.}}
 \end{pubs}
 
