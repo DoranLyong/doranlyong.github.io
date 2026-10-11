@@ -57,8 +57,9 @@ and a student researcher at the
 <a href="https://www.kist.re.kr" target="_blank" rel="noopener">Korea Institute of Science and Technology (KIST)</a>,
 where I work with Dr. Dong Hwan Kim.</p>
 <p>Before joining Korea University, I received my M.S. in Mechatronics from the
-Gwangju Institute of Science and Technology (GIST) and my B.S. in Control and
-Measurement Engineering from Gyeongsang National University.</p>
+<a href="https://www.gist.ac.kr" target="_blank" rel="noopener">Gwangju Institute of Science and Technology (GIST)</a>
+and my B.S. in Control and Measurement Engineering from
+<a href="https://www.gnu.ac.kr" target="_blank" rel="noopener">Gyeongsang National University</a>.</p>
 <p>I will complete my Ph.D. in early 2027 and am
 <strong><em style="color:var(--heading)">actively looking for a postdoctoral position starting
 in Spring 2027</em></strong> — ideally one where I can dig into fundamental challenges, even in an
@@ -74,12 +75,22 @@ const PHOTOS = {
   open: true, // true = 펼친 상태로 시작, false = 접힌 상태로 시작
   items: [
     {
-      src: "assets/img/KIST2026_award.JPG",
+      src: "assets/img/KIST2026_award.webp",
       alt: "Receiving the KIST Outstanding Student Researcher Scholarship, 2026",
       caption: "Receiving the Outstanding Student Researcher Scholarship at KIST, 2026",
     },
     {
-      src: "assets/img/ICCV2023_with_Zisserman.jpg",
+      src: "assets/img/KIST2023_award.webp",
+      alt: "Receiving the KIST Outstanding Technology Award, 2023",
+      caption: "Receiving the Outstanding Technology Award at KIST, 2023",
+    },
+    {
+      src: "assets/img/ICCV2023_poster.webp",
+      alt: "Presenting the SPANet poster at ICCV 2023",
+      caption: 'Presenting <a href="projects/spanet/">SPANet</a> at the ICCV 2023 poster session, Paris',
+    },
+    {
+      src: "assets/img/ICCV2023_with_Zisserman.webp",
       alt: "With Andrew Zisserman at ICCV 2023",
       caption:
         'With <a href="https://www.robots.ox.ac.uk/~az/" target="_blank" rel="noopener">Prof. Andrew Zisserman</a> at ICCV 2023, Paris',
