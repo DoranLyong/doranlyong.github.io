@@ -59,7 +59,7 @@ where I work with Dr. Dong Hwan Kim.</p>
 <p>Before joining Korea University, I received my M.S. in Mechatronics from the
 <a href="https://www.gist.ac.kr" target="_blank" rel="noopener">Gwangju Institute of Science and Technology (GIST)</a>
 and my B.S. in Control and Measurement Engineering from
-<a href="https://www.gnu.ac.kr" target="_blank" rel="noopener">Gyeongsang National University</a>.</p>
+<a href="https://www.gnu.ac.kr" target="_blank" rel="noopener">Gyeongsang National University (GNU)</a>.</p>
 <p>I will complete my Ph.D. in early 2027 and am
 <strong><em style="color:var(--heading)">actively looking for a postdoctoral position starting
 in Spring 2027</em></strong> — ideally one where I can dig into fundamental challenges, even in an
@@ -94,6 +94,17 @@ const PHOTOS = {
       alt: "With Andrew Zisserman at ICCV 2023",
       caption:
         'With <a href="https://www.robots.ox.ac.uk/~az/" target="_blank" rel="noopener">Prof. Andrew Zisserman</a> at ICCV 2023, Paris',
+    },
+    {
+      src: "assets/img/IRC2020_award.webp",
+      alt: "Receiving the Presidential Award at the 2020 International Robot Contest",
+      caption:
+        "Receiving the Presidential Award at the 2020 International Robot Contest — Humanoid Robot Sports (Deep Learning Algorithm)",
+    },
+    {
+      src: "assets/img/GNU-CapstoneDesign2015_award.webp",
+      alt: "Grand Prize at the 2015 Capstone Design Competition, Gyeongsang National University (GNU)",
+      caption: "Winning the Grand Prize at the 2015 Capstone Design Competition, Gyeongsang National University (GNU)",
     },
   ],
 };
@@ -474,7 +485,7 @@ const EDUCATION = [
   {
     when: "– 2016", // ⚠ 입학연도 확인 필요 (졸업 2016 만 확인됨)
     title: "B.S. in Control and Measurement Engineering",
-    sub: "Gyeongsang National University, Jinju",
+    sub: "Gyeongsang National University (GNU), Jinju",
   },
 ];
 
@@ -492,6 +503,31 @@ const AWARDS = [
   {
     year: "2020",
     text: "Presidential Award, 2020 International Robot Contest — Humanoid Robot Sports (Deep Learning Algorithm), Ministry of the Interior and Safety",
+  },
+  {
+    year: "2016 – 2017",
+    text: "Graduate Scholarship, Gwangju Institute of Science and Technology (GIST)",
+  },
+  {
+    year: "2013 – 2015",
+    text: "Academic Excellence Scholarship, Gyeongsang National University (GNU)",
+  },
+];
+
+/* Invited Talks — 비어 있으면 섹션이 숨겨집니다. text 는 HTML 허용.
+   예: { year: "2026", text: "“Talk Title” — Seminar at ..." }  */
+const TALKS = [
+  {
+    year: "2026",
+    text: '<a href="https://www.ntis.go.kr/rndtema/evnt/evntDtlIntroNew.do?evnt=evnt_2026000013" target="_blank" rel="noopener">2026 Inter-Ministerial Public Technology Transfer and Commercialization Roadshow</a> — Presentation at the Science and Technology Convention Center, Seoul',
+  },
+  {
+    year: "2021",
+    text: "“Recent Research Trends in Computer Vision” — Seminar at Korea Polytechnic University (now Tech University of Korea)",
+  },
+  {
+    year: "2021",
+    text: "“6D Object Pose Estimation” — Seminar series at CUBOX (now SECERN AI)",
   },
 ];
 

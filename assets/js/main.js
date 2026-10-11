@@ -495,6 +495,21 @@
       }
     }
 
+    /* invited talks — hide section when empty */
+    const talksSection = document.getElementById("talks");
+    const talksBody = document.getElementById("talks-body");
+    if (talksSection) {
+      if (!TALKS.length) {
+        talksSection.hidden = true;
+      } else {
+        const ul = el("ul", "flat-list");
+        TALKS.forEach(function (t) {
+          ul.appendChild(el("li", null, '<span class="year">' + esc(t.year) + "</span>" + t.text));
+        });
+        talksBody.appendChild(ul);
+      }
+    }
+
     /* services & skills */
     const svc = document.getElementById("services-body");
     if (svc) {

@@ -20,7 +20,7 @@
 | 뉴스 | `NEWS` (최신순, ISO 날짜) |
 | 논문 필터 칩 (All 탭) | `THEMES` |
 | 논문 | `PUBS` |
-| 경력 / 학력 / 수상 / 서비스 | `EXPERIENCE` / `EDUCATION` / `AWARDS` / `SERVICES` |
+| 경력 / 학력 / 수상 / 강연 / 서비스 | `EXPERIENCE` / `EDUCATION` / `AWARDS` / `TALKS` / `SERVICES` |
 
 ### 논문 추가
 
