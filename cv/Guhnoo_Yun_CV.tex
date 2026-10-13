@@ -9,7 +9,8 @@
 %  Layout: blue band on every page, dates in a left column, blue upper-case
 %  section headings over a rule, Open Sans throughout.
 % ============================================================================
-\documentclass[10pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
+\usepackage[fontsize=11.7pt]{fontsize}  % article has no 11.7pt option
 \usepackage[T1]{fontenc}
 \usepackage[default,proportional]{opensans}
 \usepackage[left=1in,right=1in,top=0.9in,bottom=0.85in,footskip=0.4in]{geometry}
@@ -55,8 +56,9 @@
   \dimen@ii\pagegoal\advance\dimen@ii-\pagetotal
   \ifdim\dimen@>\dimen@ii\ifdim\dimen@ii>\z@\vfill\fi\break\fi\endgroup}
 \makeatother
-\newcommand{\cvsection}[1]{\par\vspace{11pt}\keepspace{5\baselineskip}%
-  {\color{cvblue}\large\bfseries\MakeUppercase{#1}\par}\vspace{3pt}%
+% optional argument: lines that must fit below the heading, or the section starts on the next page
+\newcommand{\cvsection}[2][8]{\par\vspace{8pt}\keepspace{#1\baselineskip}%
+  {\color{cvblue}\large\bfseries\MakeUppercase{#2}\par}\vspace{3pt}%
   {\color{cvblue}\hrule height 1pt}\vspace{8pt}}
 % date column on the left (right-aligned), entry text on the right
 \newlength{\datecol}\setlength{\datecol}{0.95in}
@@ -79,7 +81,7 @@
 % in-text reference (tied): \rt{4} -> [4], \rt{2, 3} -> [2, 3]; each number links to its entry
 \makeatletter
 \newcommand{\rt}[1]{\unskip~{\color{cvblue}\scriptsize\bfseries[%
-  \def\rt@sep{\def\rt@sep{, }}%
+  \def\rt@sep{\def\rt@sep{,~}}%
   \renewcommand*{\do}[1]{\rt@sep\hyperlink{pub:##1}{##1}}\docsvlist{#1}]}}
 \makeatother
 \newcommand{\me}{\uline{Guhnoo Yun}}
@@ -91,8 +93,9 @@
 
 % ---- header -----------------------------------------------------------------
 \noindent
-\begin{minipage}[t]{0.64\linewidth}
-  {\color{cvblue}\fontsize{20}{24}\selectfont\bfseries GUHNOO YUN\par}
+\begin{minipage}[t]{0.68\linewidth}
+  \raggedright
+  {\color{cvblue}\fontsize{24}{28}\selectfont\bfseries GUHNOO YUN\par}
   \vspace{12pt}
   \textbf{Ph.D. Candidate}\par
   \textbf{Computer Science and Engineering, Korea University}\par
@@ -101,7 +104,7 @@
   Seoul, Republic of Korea\par
 \end{minipage}\hfill
 \vrule width 0.6pt\hspace{0.16in}%
-\begin{minipage}[t]{0.29\linewidth}
+\begin{minipage}[t]{0.26\linewidth}
   \raggedleft\vspace{4pt}
   \lnk{mailto:cheeryun@gmail.com}{cheeryun@gmail.com}\par
   \lnk{https://doranlyong.github.io}{doranlyong.github.io}\par
@@ -115,95 +118,67 @@
 
 % ---- research statement -----------------------------------------------------
 \cvsection{Research Statement}
-\textbf{Analyzing and developing the inner workings of AI perception models to improve how
-machines see and understand the real world.}\enspace AI perception models often work well before
-anyone knows why. My research explores the underlying mechanisms, often by treating each core
-component inside a model as a filter and analyzing what it keeps or removes as information passes
-through it, from broad patterns to fine details. I then turn that understanding into better designs.
-\begin{itemize}
+% looser lines for easier reading; ragged right avoids stretched word gaps
+{\linespread{1.3}\selectfont\raggedright
+\textbf{Analyzing and designing the inner workings of AI perception models to improve how
+machines see and understand the real world.}\enspace AI perception models can work well long before anyone knows why. My research explores the underlying mechanisms, often by treating each core
+component inside a model as a filter and analyzing what it keeps or removes, from broad patterns to fine details, as information passes through it. I then turn that understanding into better~designs.
+\begin{itemize}[itemsep=5pt, topsep=6pt]
   \item Analyzed convolution and attention as spectral filters, and designed new components that balance
-        fine details and broad patterns. Then grounded them in theory and outperformed leading
-        vision architectures. \rt{1, 4}
-  \item Viewed linear attention, whose cost grows only in proportion to input size, as a fixed-size
-        memory, and used a filter to decide what that memory keeps. The result is a general-purpose
+        fine details and broad patterns. Then grounded them in theory, and the resulting models outperformed leading vision architectures. \rt{1, 4}
+  \item Viewed linear attention as a fixed-size memory, whose cost grows only in proportion to input size, and used a filter to decide what that memory keeps and recalls. The result is a general-purpose
         operation that works across image classification, object detection, segmentation, and
         image generation. \rt{11}
-  \item Built perception systems for healthcare robots and daily life, some combining cameras with
-        brain waves and body motion. They detect falls of older adults and support robot services
-        in hospital isolation wards. \rt{2, 3, 5, 6, 8, 9}
+  \item Developed vision algorithms that detect falls and recognize daily activities for care
+        robots at home and in hospital isolation wards. \rt{5, 6, 8, 9} Built the vision part of
+        systems pairing first-person video with brain signals, using foundation models and large
+        language model agents to describe where a person is and what they came to do. \rt{2, 3}
 \end{itemize}
-Looking ahead, I aim to unite the different mathematical views of AI perception models, such as
-filters and memories, into one understanding that brings machines closer to human intelligence.
-My work already builds on both of these views. With this understanding, I will design models that
+Looking ahead, I aim to unify the different mathematical views of AI perception models, such as filters and memories, into a single framework that brings machines closer to human intelligence.
+My work already builds on both of these views. With this framework, I will design models that
 combine video, sound, and body signals, and that run well on the chips inside real machines such
-as humanoid robots. The goal is machines that understand the real world, built on designs we understand.\par
+as humanoid robots. The goal is machines that understand the real world, built on designs we can~explain.\par}
 
 % ---- education --------------------------------------------------------------
-\cvsection{Education}
+\cvsection[5]{Education}
 \begin{entries}
   \item[\when{Feb 2027\\(expected)}] \textbf{Ph.D. in Computer Science and Engineering}\par
-    \textbf{Korea University}\enspace Seoul, Korea\par
-    \detail{Dissertation: \textit{Spectral Analysis and Adaptive Filtering for Visual Perception}}
+    \textbf{Korea University}\enspace Seoul,~Korea\par
+    \detail{Dissertation: \textit{Spectral Analysis and Adaptive Filtering for Visual~Perception}}
+  \keepspace{4.5\baselineskip}% move a whole entry rather than split it
   \item[2018] \textbf{M.S. in Mechatronics}\par
-    \textbf{Gwangju Institute of Science and Technology (GIST)}\enspace Gwangju, Korea\par
+    \textbf{Gwangju Institute of Science and Technology (GIST)}\enspace Gwangju,~Korea\par
     \detail{Thesis: \textit{Removal of Jitter Noise using a Modified Kalman Filter in 3D Shape
       Recovery from Focus}}
+  \keepspace{2.5\baselineskip}%
   \item[2016] \textbf{B.S. in Control and Measurement Engineering}\par
-    \textbf{Gyeongsang National University (GNU)}\enspace Jinju, Korea
+    \textbf{Gyeongsang National University (GNU)}\enspace Jinju,~Korea
 \end{entries}
 
 % ---- research experience ----------------------------------------------------
+% keep the heading with the whole first entry instead of splitting it across pages
+\keepspace{9\baselineskip}
 \cvsection{Research Experience}
 \begin{entries}
   \item[Since 2019] \textbf{Student Researcher}\par
     Intelligence and Interaction Research Center,
     \textbf{Korea Institute of Science and Technology (KIST)}\par
     Supervisor: Dr.\ Dong Hwan Kim\par
-
-    \cvtopic{Linear Attention for Generative and Vision Transformers (SALAFormer; in preparation \rt{11})}
-    \begin{itemize}
-      \item Designed \textbf{SALA} (Spectral-Adaptive Linear Attention) as closed-form associative
-            memory: each head solves a small ridge regression for what to store in its fixed-size
-            memory, instead of summing raw key--value products, and a learned spectral filter on the
-            key Gram matrix allocates that memory, at linear \textit{O}(\textit{N}) inference cost.
-      \item \textbf{Image generation:} lower FID than MHLA (ICLR~2026), a recent linear-attention
-            design for diffusion transformers, at both model sizes: 59.80\,$\rightarrow$\,\textbf{57.65}
-            (DiT-S/2) and 37.47\,$\rightarrow$\,\textbf{36.54} (DiT-B/2) vs.\ its published results
-            (\mbox{class-conditional} ImageNet 256\texttimes256, no guidance).
-      \item \textbf{Image classification:} SALA in a vision backbone (SALAFormer) reaches
-            \textbf{77.2\%} / \textbf{81.8\%} ImageNet-1K top-1 at DeiT-Tiny/Small size, above the
-            76.5\% / 81.6\% reported for ViT\textsuperscript{3} (CVPR~2026) with the same recipe.
-    \end{itemize}
-
-    \cvtopic{Spectral Analysis of Convolution and Attention for Vision Backbones}
-    \begin{itemize}
-      \item Developed \textbf{SPANetV2}: compared what convolution and self-attention pass or
-            suppress in one graph-spectral framework, showing that window size shapes their frequency
-            responses, and turned this into a mixer with multi-scale kernels and spectral re-scaling;
-            the backbone outperforms state-of-the-art models on ImageNet-1K, COCO, and ADE20K. \rt{1}
-      \item Proposed \textbf{SPANet}: prior work found that self-attention acts as a low-pass
-            filter, while convolution retains high frequencies, and that stronger high-pass filtering
-            helps self-attention. SPANet showed that stronger low-pass filtering also helps
-            convolution, and that a token mixer \emph{balancing} high and low frequencies improves
-            accuracy. \rt{4}
-    \end{itemize}
-
-    \cvtopic{Applied Vision for Robotics, Healthcare \& 3D Shape Recovery}
-    \begin{itemize}
-      \item Fall detection of older adults by a healthcare robot \rt{6}; robot-assisted services in
-            isolation wards \rt{5}; \mbox{daily-life} arousal monitoring and brain--computer interface
-            decoding with egocentric vision and EEG \rt{2, 3}; a \mbox{view-consistent}
-            evaluation metric for multi-view panoptic segmentation \rt{10}.
-      \item Shape from focus, a follow-up to the M.S.\ thesis: 3D shape from few images with
-            Gaussian-process regression \rt{7}.
-    \end{itemize}
+    Developed vision architectures and efficient attention \rt{1, 4, 11}, vision algorithms for care
+    robots and first-person video \rt{2, 3, 5, 6}, and 3D and multi-view vision methods \rt{7, 10}.
   \item[2018 -- 2019] \textbf{Intern Researcher}\par
-    Center for Intelligent Robotics, \textbf{KIST}
-    \begin{itemize}
-      \item Perception for healthcare robots: detecting when people with dementia leave home, to keep
-            them from going missing \rt{9}; accelerometer--depth fall detection for older adults
-            \rt{8}, later extended with LSTMs \rt{6}.
-    \end{itemize}
+    Center for Intelligent Robotics, \textbf{KIST}\par
+    Developed vision algorithms for the care of older adults at home, such as detecting falls and monitoring people with dementia.
+    \rt{8, 9}
+  \item[2016 -- 2017] \textbf{M.S. Student}\par
+    Department of Mechatronics, \textbf{Gwangju Institute of Science and Technology (GIST)}\par
+    Advisor: Prof.\ Tae-Sun Choi\par
+    Worked on 3D shape recovery from images taken at different focus settings.
+  \item[Aug 2015] \textbf{Summer Undergraduate Research Fellowship}\par
+    Computer Science and Engineering,
+    \textbf{Ulsan National Institute of Science and Technology (UNIST)}\par
+    Supervisor: Prof.\ Jaesik Choi\par
+    Studied deep learning.
 \end{entries}
 
 % ---- publications -----------------------------------------------------------
@@ -265,10 +240,11 @@ as humanoid robots. The goal is machines that understand the real world, built o
 
 % ---- patents ----------------------------------------------------------------
 % English titles are translations of the Korean registered titles
-\cvsection{Patents}
+\cvsection[4]{Patents}
 \begin{entries}
   \item[2025] \textbf{Frequency-Balancing Token Mixer and Its Backbone Model}\par
     Korean Patent No.\ 10-2815184 (registered May 27, 2025)
+  \keepspace{3.5\baselineskip}% move a whole entry rather than split it
   \item[2022] \textbf{System and Method for Determining Whether a Resident Has Left Home}\par
     Korean Patent No.\ 10-2374057 (registered Mar 8, 2022)
 \end{entries}
@@ -285,6 +261,8 @@ as humanoid robots. The goal is machines that understand the real world, built o
     Ministry of the Interior and Safety
   \item[2016 -- 2017] \textbf{Graduate Scholarship}\par
     Gwangju Institute of Science and Technology (GIST)
+  \item[2015] \textbf{Grand Prize}\enspace 2015 Capstone Design Competition\par
+    Gyeongsang National University (GNU)
   \item[2013 -- 2015] \textbf{Academic Excellence Scholarship}\par
     Gyeongsang National University (GNU)
 \end{entries}
@@ -294,9 +272,9 @@ as humanoid robots. The goal is machines that understand the real world, built o
 \begin{entries}
   % English event name is a translation of 2026년 범부처 공공기술 이전·사업화 로드쇼
   \item[2026] \textbf{2026 Inter-Ministerial Public Technology Transfer and Commercialization Roadshow}\par
-    Presentation at the Science and Technology Convention Center, Seoul
+    Presentation at the Science and Technology Convention Center,~Seoul
   \item[2021] \textbf{``Recent Research Trends in Computer Vision''}\par
-    Seminar at Korea Polytechnic University (now Tech University of Korea)
+    Seminar at Korea Polytechnic University (now Tech University of~Korea)
   \item[2021] \textbf{``6D Object Pose Estimation''}\par
     Seminar series at CUBOX (now SECERN AI)
 \end{entries}
@@ -308,14 +286,14 @@ as humanoid robots. The goal is machines that understand the real world, built o
 \end{entries}
 
 % ---- skills -----------------------------------------------------------------
-\cvsection{Technical Skills}
+\cvsection[5]{Technical Skills}
 \begin{entries}
   \item[] \textbf{Languages \& Frameworks:} Python, PyTorch, C++, MATLAB; timm, MMDetection,
     MMSegmentation, ROS
 \end{entries}
 
 % ---- references -------------------------------------------------------------
-\cvsection{References}
+\cvsection[5]{References}
 % rows = name / affiliation / e-mail, so the e-mails stay aligned when an affiliation wraps
 \noindent\begin{tabularx}{\linewidth}{@{}L@{\hspace{1em}}L@{\hspace{1em}}L@{}}
   \textbf{Dr.\ Dong Hwan Kim} & \textbf{Prof.\ Soohwan Kim} & \textbf{Dr.\ Yoonseob Lim}\\
