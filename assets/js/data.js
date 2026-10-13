@@ -33,7 +33,7 @@ const SITE = {
   rsLink: null, // Research statement PDF (있으면 버튼 자동 표시)
   portrait: "assets/img/profile.webp",
   canonical: "https://doranlyong.github.io/",
-  updated: "2026-10-11",
+  updated: "2026-10-13",
 };
 
 /* 3인칭 소개문 — "Copy bio" 버튼이 이 문자열을 복사합니다. */
@@ -45,9 +45,9 @@ const BIO =
   "at Korea University, Seoul, Korea. From 2018 to 2019, he was an intern researcher at " +
   "the Center for Intelligent Robotics, Korea Institute of Science and Technology (KIST), " +
   "and he has been a student researcher at the Intelligence and Interaction Research " +
-  "Center, KIST, since 2019. His current research interests are in computer vision, " +
-  "pattern recognition, machine learning, deep learning architecture, and their " +
-  "applications including object detection, instance segmentation, and 3D vision.";
+  "Center, KIST, since 2019. His current research interests include the analysis and " +
+  "design of AI perception models, efficient attention, and vision for care robots and " +
+  "daily life.";
 
 /* 홈 About 문단 (HTML 허용) — 신상·소속만. 연구 내용은 Research Interests 로. */
 const ABOUT_HTML = `
@@ -111,23 +111,27 @@ const PHOTOS = {
 
 /* Research Interests 서두 문단 — 불릿 목록 위에 렌더링 (HTML 허용, 없으면 생략) */
 const INTERESTS_INTRO_HTML = `
-<p>My research goal is to understand <strong>what deep neural networks actually see in the
-spectral domain</strong>, and to turn that understanding into <strong>principled architecture
-design</strong>. Currently, my research interests include:</p>
+<p>I analyze and design the inner workings of AI perception models to improve how machines see
+and understand the real world. These models can work well long before anyone knows why. I study
+why they work, often by treating each component inside a model as a filter. I then build better
+models from what I learn.</p>
 `;
 
 /* Research Interests 마무리 문단 — 불릿 목록 아래 렌더링 (HTML 허용, 없으면 생략) */
 const INTERESTS_OUTRO_HTML = `
-<p>I am deeply interested in understanding the <strong>theoretical foundations of
-machine learning</strong> and its applications in vision, healthcare, and robotics.</p>
+<p>Looking ahead, I aim to unify the different views of these models, such as filters and
+memories, into a single framework that brings machines closer to human intelligence. With that
+framework, I will develop models that combine video, sound, and body signals, and that run well
+on the chips inside real machines such as humanoid robots. The goal is machines that understand
+the real world, built on designs we can explain.</p>
 `;
 
-/* Research Interests — 항목별 한 줄 (영역명: 키워드 나열) */
+/* Research Interests — 항목별 한 줄 (굵은 주제명. 설명 한 문장). CV 의 Research Statement 와 같은 축,
+   근거(논문 번호·링크)는 넣지 않는다 */
 const INTERESTS = [
-  "<strong>Spectral Understanding of Deep Networks</strong>: frequency responses of convolution &amp; self-attention, graph spectral analysis, inductive biases.",
-  "<strong>Architecture Design</strong>: token mixers, backbone networks, general-purpose vision architectures.",
-  "<strong>Video Understanding &amp; 3D Vision</strong>: temporal modeling, shape from focus.",
-  "<strong>Vision for Robotics &amp; Healthcare</strong>: human-robot interaction, gesture interfaces, health monitoring.",
+  "<strong>Convolution and attention as filters.</strong> Analyzing what they keep or remove, and designing components that balance fine details and broad patterns.",
+  "<strong>Linear attention as memory.</strong> Using filters to decide what a fixed-size memory keeps and recalls, so that one efficient building block works for both recognizing and generating images.",
+  "<strong>Vision for care robots and daily life.</strong> Detecting falls, recognizing daily activities, and understanding first-person video.",
 ];
 
 /* 뉴스 — 최신순. html 안에서 #id 로 딥링크 가능
@@ -455,18 +459,31 @@ const PUBS = [
 const EXPERIENCE = [
   {
     when: "2019 – present",
-    title: "Student Researcher",
-    sub: 'Korea Institute of Science and Technology (KIST), Seoul — with Dr. Dong Hwan Kim',
+    title: "Ph.D. Student Researcher",
+    sub: "Intelligence and Interaction Research Center, Korea Institute of Science and Technology (KIST)<br>Supervisor: Dr. Dong Hwan Kim",
     bullets: [
-      "Spectral analysis of vision backbones; token mixer design (SPANet, SPANetV2)",
-      "Vision-based human-robot interaction: gesture control, fall detection",
+      "Developed vision architectures and efficient attention, vision algorithms for care robots and first-person video, and 3D and multi-view vision methods.",
     ],
   },
   {
     when: "2018 – 2019",
     title: "Intern Researcher",
-    sub: "KIST Center for Intelligent Robotics, Seoul",
-    bullets: ["Perception for healthcare and assistive robotics"],
+    sub: "Center for Intelligent Robotics, KIST",
+    bullets: [
+      "Developed vision algorithms for the care of older adults at home, such as detecting falls and monitoring people with dementia.",
+    ],
+  },
+  {
+    when: "2016 – 2017",
+    title: "M.S. Student",
+    sub: "Department of Mechatronics, Gwangju Institute of Science and Technology (GIST)<br>Advisor: Prof. Tae-Sun Choi",
+    bullets: ["Worked on 3D shape recovery from images taken at different focus settings."],
+  },
+  {
+    when: "Aug 2015",
+    title: "Summer Undergraduate Research Fellowship",
+    sub: "Computer Science and Engineering, Ulsan National Institute of Science and Technology (UNIST)<br>Supervisor: Prof. Jaesik Choi",
+    bullets: ["Studied deep learning."],
   },
 ];
 
@@ -483,7 +500,7 @@ const EDUCATION = [
     sub: "Gwangju Institute of Science and Technology (GIST), Gwangju",
   },
   {
-    when: "– 2016", // ⚠ 입학연도 확인 필요 (졸업 2016 만 확인됨)
+    when: "2010 – 2016",
     title: "B.S. in Control and Measurement Engineering",
     sub: "Gyeongsang National University (GNU), Jinju",
   },
@@ -507,6 +524,10 @@ const AWARDS = [
   {
     year: "2016 – 2017",
     text: "Graduate Scholarship, Gwangju Institute of Science and Technology (GIST)",
+  },
+  {
+    year: "2015",
+    text: "Grand Prize, 2015 Capstone Design Competition, Gyeongsang National University (GNU)",
   },
   {
     year: "2013 – 2015",

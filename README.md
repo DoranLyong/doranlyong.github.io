@@ -48,7 +48,8 @@
 - [x] 프로필 사진: `assets/img/profile.webp` (얼굴 중심 600×600 크롭 적용됨)
 - [x] CV: `assets/pdf/Guhnoo_Yun_CV.pdf` (`SITE.cvLink` 지정됨 → CV 버튼 표시, 원본·빌드는 아래 "CV 빌드")
 - [ ] `NEWS` 날짜 정확한 날짜로 수정 (현재 근사치)
-- [ ] `EDUCATION` 학사 입학연도 확인 (졸업 2016만 확인됨), 박사과정 시작연도 추가
+- [x] `EDUCATION` 학사 기간 2010 – 2016
+- [ ] `EDUCATION` 박사과정 시작연도 추가 (2019 확인됨)
 - [ ] `AWARDS` 수상 내역 채우기 (현재 비어 있어 섹션 자동 숨김)
 - [ ] `SERVICES.reviewer` 리뷰어 활동 채우기
 - [ ] 이메일을 학교 주소로 바꾸려면 `SITE.emailUser/emailDomain` 수정
