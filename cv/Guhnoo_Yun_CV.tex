@@ -121,12 +121,16 @@ anyone knows why. My research explores the underlying mechanisms, often by treat
 component inside a model as a filter and analyzing what it keeps or removes as information passes
 through it, from broad patterns to fine details. I then turn that understanding into better designs.
 \begin{itemize}
-  \item Spectral analysis of convolution and self-attention (frequency balancing, graph-spectral
-        frequency responses)
-  \item Spectral-adaptive operators as general-purpose replacements for softmax attention, from vision
-        backbones to diffusion transformers (SPAM, SALA)
-  \item Visual perception for robots and healthcare (fall detection, isolation-ward services,
-        daily-life monitoring)
+  \item Analyzed convolution and attention as spectral filters, and designed new components that balance
+        fine details and broad patterns. Then grounded them in theory and outperformed leading
+        vision architectures. \rt{1, 4}
+  \item Viewed linear attention, whose cost grows only in proportion to input size, as a fixed-size
+        memory, and used a filter to decide what that memory keeps. The result is a general-purpose
+        operation that works across image classification, object detection, segmentation, and
+        image generation. \rt{11}
+  \item Built perception systems for healthcare robots and daily life, some combining cameras with
+        brain waves and body motion. They detect falls of older adults and support robot services
+        in hospital isolation wards. \rt{2, 3, 5, 6, 8, 9}
 \end{itemize}
 Looking ahead, I aim to unite the different mathematical views of AI perception models, such as
 filters and memories, into one understanding that brings machines closer to human intelligence.
